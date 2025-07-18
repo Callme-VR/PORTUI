@@ -1,15 +1,13 @@
 import { cn } from "@/lib/utils";
 import type { NavSection } from "@/config/navigation";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 interface DesktopNavProps {
   section: NavSection[];
+  pathname: string;
 }
 
-export default function DesktopNav({ section }: DesktopNavProps) {
-  const pathname = usePathname();
-
+export default function DesktopNav({ section, pathname }: DesktopNavProps) {
   return (
     <div className="hidden md:block w-full z-40 space-y-4">
       <div

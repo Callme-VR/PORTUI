@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import type { NavSection } from "@/config/navigation";
-import { DesktopNav } from "./desktop-nav";
+import DesktopNav from "./desktop-nav";
 import { MobileNav } from "./mobile-nav";
 
 interface ComponentNavProps {
@@ -15,12 +15,12 @@ export default function ComponentNav({ sections }: ComponentNavProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const totalItems = sections.reduce(
-    (acc, section) => acc + section.items.length,
+    (acc, section) => acc + (section.items?.length || 0),
     0
   );
 
   const currentPage = sections
-    .flatMap((section) => section.items)
+    .flatMap((section) => section.items || [])
     .find((item) => {
       if (item.href === "/docs") {
         return pathname === "/docs" || pathname === "/docs/introduction";
@@ -37,12 +37,12 @@ export default function ComponentNav({ sections }: ComponentNavProps) {
       return pathname === item.href;
     });
 
-  const handleExpandToggle = () => setIsExpanded(!isExpanded);
+  const handleExpandToggle = () => setIsExpanded((prev) => !prev);
   const handleItemClick = () => setIsExpanded(false);
 
   return (
     <>
-      <DesktopNav sections={sections} pathname={pathname} />
+      <DesktopNav section={sections} pathname={pathname} />
       <MobileNav
         sections={sections}
         pathname={pathname}
