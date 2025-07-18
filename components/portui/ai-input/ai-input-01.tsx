@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
 
 export default function AIInput_01() {
-  const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+  const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
     minHeight: 52,
     maxHeight: 200,
   });
@@ -15,7 +15,7 @@ export default function AIInput_01() {
 
   const handleReset = () => {
     setInputValue("");
-    adjustHeight(true);
+    adjustHeight();
   };
 
   return (
@@ -36,7 +36,7 @@ export default function AIInput_01() {
             "min-h-[52px]",
             "max-h-[200px]"
           )}
-          ref={textareaRef}
+          ref={textAreaRef}
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);
