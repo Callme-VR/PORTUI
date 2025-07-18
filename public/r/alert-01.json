@@ -1,0 +1,16 @@
+{
+  "name": "alert-01",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { CheckCircle2 } from \"lucide-react\";\r\nexport default function Alert01() {\r\n  return (\r\n    <div className=\"w-full max-w-xl mx-auto\">\r\n      <div className=\"relative bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:zinc-800 shadow-[0_1px_6px_0rgba(0,0,0,0.2)] rounded-2xl p-2\">\r\n        <div className=\"flex gap-4\">\r\n          <div className=\"p-2 rounded-full\">\r\n            <div className=\"rounded-full bg-white dark:text-zinc-900\">\r\n              <div>\r\n                <CheckCircle2 className=\"w-6 h-6 text-zinc-500 dark:text-zinc-500\" />\r\n              </div>\r\n            </div>\r\n            <div className=\"space-y-0.5\">\r\n              <h3 className=\"text-sm font-semibold text-zinc-700 dark:text-zinc-300\">\r\n                PORTUI\r\n              </h3>\r\n              <p className=\"text-[13px] text-zinc-500 dark:text-zinc-500\">\r\n                Use CLI To Install This ~\r\n              </p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "path": "/components/portui/alert/alert-01.tsx",
+      "target": "/components/portui/alert-01.tsx"
+    }
+  ]
+}

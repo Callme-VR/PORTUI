@@ -1,0 +1,12 @@
+{
+  "name": "use-auto-resize-textarea",
+  "type": "registry:hook",
+  "files": [
+    {
+      "type": "registry:hook",
+      "content": "import { useEffect, useCallback, useRef } from \"react\";\r\n\r\ninterface UseAutoResizeTextareaProps {\r\n  minHeight?: number;\r\n  maxHeight?: number;\r\n}\r\n\r\nexport function useAutoResizeTextarea({\r\n  minHeight = 40,\r\n  maxHeight,\r\n}: UseAutoResizeTextareaProps = {}) {\r\n  const textAreaRef = useRef<HTMLTextAreaElement>(null);\r\n\r\n  const adjustHeight = useCallback(() => {\r\n    const textarea = textAreaRef.current;\r\n    if (!textarea) return;\r\n    textarea.style.height = `${minHeight}px`;\r\n    const newHeight = Math.max(\r\n      minHeight,\r\n      Math.min(textarea.scrollHeight, maxHeight ?? Number.POSITIVE_INFINITY)\r\n    );\r\n    textarea.style.height = `${newHeight}px`;\r\n  }, [minHeight, maxHeight]);\r\n\r\n  useEffect(() => {\r\n    const textarea = textAreaRef.current;\r\n    if (textarea) {\r\n      adjustHeight();\r\n    }\r\n  }, [adjustHeight]);\r\n\r\n  useEffect(() => {\r\n    const handleResize = () => adjustHeight();\r\n    window.addEventListener(\"resize\", handleResize);\r\n    return () => {\r\n      window.removeEventListener(\"resize\", handleResize);\r\n    };\r\n  }, [adjustHeight]);\r\n\r\n  return { textAreaRef, adjustHeight };\r\n}\r\n",
+      "path": "/hooks/use-auto-resize-textarea.ts",
+      "target": "/hooks/use-auto-resize-textarea.ts"
+    }
+  ]
+}
