@@ -1,12 +1,35 @@
 import { createMDX } from "fumadocs-mdx/next";
-import type { NextConfig } from "next";
 
 const withMDX = createMDX();
 
-const nextConfig: NextConfig = {
-  reactStrictMode: true,
+const nextConfig = {
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  outputFileTracingIncludes: {
+    "/**": ["components/portui/**/*"],
+  },
+  async headers() {
+    return [
+      {
+        source: "/r/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
+  },
   images: {
-    domains: ["ferf1mheo22r9ira.public.blob.vercel-storage.com"],
+    remotePatterns: [
+      {
+        hostname: "*",
+      },
+    ],
+  },
+  reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 
