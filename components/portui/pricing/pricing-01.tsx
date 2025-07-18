@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import {
-    Check,
     Sparkles,
     ArrowRight,
     Shield,
@@ -57,7 +56,7 @@ export default function Pricing_01() {
                 )}
             >
                 {/* Ambient background effect */}
-                <div className="absolute inset-0 bg-linear-to-br from-violet-500/5 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-transparent to-transparent" />
 
                 {/* Header */}
                 <div className="relative p-6 flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800">

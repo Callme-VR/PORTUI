@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
-import { motion } from "motion/react";
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface CyberBackgroundProps {
@@ -102,21 +102,6 @@ function createNoise() {
     };
 }
 
-const COLOR_SCHEME = {
-    light: {
-        particle: {
-            color: "rgba(0, 0, 0, 0.07)",
-        },
-        background: "rgba(255, 255, 255, 0.12)",
-    },
-    dark: {
-        particle: {
-            color: "rgba(255, 255, 255, 0.07)",
-        },
-        background: "rgba(0, 0, 0, 0.12)",
-    },
-} as const;
-
 interface Particle {
     x: number;
     y: number;
@@ -170,7 +155,7 @@ export default function ParticlesBackground({
 
         const animate = () => {
             const isDark = document.documentElement.classList.contains("dark");
-            const scheme = isDark ? COLOR_SCHEME.dark : COLOR_SCHEME.light;
+            // const scheme = isDark ? COLOR_SCHEME.dark : COLOR_SCHEME.light;
 
             ctx.fillStyle = isDark
                 ? "rgba(0, 0, 0, 0.1)"

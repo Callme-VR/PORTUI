@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 
 interface Btn03Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     particleCount?: number;
-    attractRadius?: number;
 }
 
 interface Particle {
@@ -20,7 +19,6 @@ interface Particle {
 export default function Btn03({
     className,
     particleCount = 12,
-    attractRadius = 50,
     ...props
 }: Btn03Props) {
     const [isAttracting, setIsAttracting] = useState(false);
@@ -73,18 +71,20 @@ export default function Btn03({
                 "transition-all duration-300",
                 className
             )}
+            aria-label={isAttracting ? "Attracting particles" : "Hover to attract particles"}
             onMouseEnter={handleInteractionStart}
             onMouseLeave={handleInteractionEnd}
             onTouchStart={handleInteractionStart}
             onTouchEnd={handleInteractionEnd}
             {...props}
         >
-            {particles.map((_, index) => (
+            {particles.map((particle, index) => (
                 <motion.div
-                    key={index}
+                    key={particle.id}
                     custom={index}
-                    initial={{ x: particles[index].x, y: particles[index].y }}
+                    initial={{ x: particle.x, y: particle.y }}
                     animate={particlesControl}
+                    aria-hidden="true"
                     className={cn(
                         "absolute w-1.5 h-1.5 rounded-full",
                         "bg-violet-400 dark:bg-violet-300",
@@ -99,6 +99,7 @@ export default function Btn03({
                         "w-4 h-4 transition-transform duration-300",
                         isAttracting && "scale-110"
                     )}
+                    aria-hidden="true"
                 />
                 {isAttracting ? "Attracting" : "Hover me"}
             </span>

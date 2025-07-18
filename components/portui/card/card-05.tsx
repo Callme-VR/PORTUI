@@ -83,7 +83,7 @@ function CardDetails({
             </div>
 
             <div className="grid grid-cols-3 gap-4">
-                {metrics.map((metric, index) => (
+                {metrics.map((metric) => (
                     <div
                         key={metric.label}
                         className="relative flex flex-col items-center"
@@ -131,7 +131,7 @@ function CardDetails({
                     <div className="flex items-center justify-between">
                         <h4 className="flex items-center gap-2 text-sm font-medium text-zinc-700 dark:text-zinc-300">
                             <Target className="w-4 h-4" />
-                            Today's Goals
+                            Today Goals
                         </h4>
                         <button
                             type="button"
@@ -211,7 +211,7 @@ const INITIAL_GOALS: Goal[] = [
 
 export default function Card05() {
     const [goals, setGoals] = useState<Goal[]>(INITIAL_GOALS);
-    const [metrics, setMetrics] = useState<Metric[]>(INITIAL_METRICS);
+    const [metrics] = useState<Metric[]>(INITIAL_METRICS);
 
     const handleToggleGoal = (goalId: string) => {
         setGoals((prev) =>

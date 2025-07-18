@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import {
     Filter,
@@ -25,8 +25,6 @@ interface ToolbarItem {
 
 interface ToolbarProps {
     className?: string;
-    activeColor?: string;
-    onSearch?: (value: string) => void;
 }
 
 const buttonVariants = {
@@ -59,21 +57,19 @@ const lineVariants = {
     animate: {
         scaleX: 1,
         x: "0%",
-        transition: { duration: 0.2, ease: "easeOut" },
+        transition: { duration: 0.2 },
     },
     exit: {
         scaleX: 0,
         x: "50%",
-        transition: { duration: 0.2, ease: "easeIn" },
+        transition: { duration: 0.2 },
     },
 };
 
-const transition = { type: "spring", bounce: 0, duration: 0.4 };
+const transition = { type: "spring" as const, bounce: 0, duration: 0.4 };
 
 export function Toolbar({
     className,
-    activeColor = "text-primary",
-    onSearch,
 }: ToolbarProps) {
     const [selected, setSelected] = React.useState<string | null>("filter");
     const [isToggled, setIsToggled] = React.useState(false);

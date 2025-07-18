@@ -2,12 +2,14 @@
 
 import { useState, useRef, type RefObject } from "react";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import type { ButtonProps } from "@/components/ui/button";
 import { MousePointerClick } from "lucide-react";
 
-interface ParticleButtonProps extends ButtonProps {
+interface ParticleButtonProps {
+    children: React.ReactNode;
+    onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    className?: string;
     onSuccess?: () => void;
     successDuration?: number;
 }
@@ -64,7 +66,8 @@ export default function ParticleButton({
 
     const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
         setShowParticles(true);
-
+        if (onClick) await onClick(e);
+        if (onSuccess) onSuccess();
         setTimeout(() => {
             setShowParticles(false);
         }, successDuration);

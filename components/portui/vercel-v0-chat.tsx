@@ -14,10 +14,11 @@ import {
     Paperclip,
     PlusIcon,
 } from "lucide-react";
+import React from "react";
 
 export function VercelV0Chat() {
     const [value, setValue] = useState("");
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 60,
         maxHeight: 200,
     });
@@ -27,7 +28,7 @@ export function VercelV0Chat() {
             e.preventDefault();
             if (value.trim()) {
                 setValue("");
-                adjustHeight(true);
+                adjustHeight();
             }
         }
     };
@@ -42,7 +43,7 @@ export function VercelV0Chat() {
                 <div className="relative bg-neutral-900 rounded-xl border border-neutral-800">
                     <div className="overflow-y-auto">
                         <Textarea
-                            ref={textareaRef}
+                            ref={textAreaRef}
                             value={value}
                             onChange={(e) => {
                                 setValue(e.target.value);
@@ -50,6 +51,7 @@ export function VercelV0Chat() {
                             }}
                             onKeyDown={handleKeyDown}
                             placeholder="Ask v0 a question..."
+                            autoComplete="off"
                             className={cn(
                                 "w-full px-4 py-3",
                                 "resize-none",
@@ -71,9 +73,10 @@ export function VercelV0Chat() {
                         <div className="flex items-center gap-2">
                             <button
                                 type="button"
+                                aria-label="Attach file"
                                 className="group p-2 hover:bg-neutral-800 rounded-lg transition-colors flex items-center gap-1"
                             >
-                                <Paperclip className="w-4 h-4 text-white" />
+                                <Paperclip className="w-4 h-4 text-white" aria-hidden="true" />
                                 <span className="text-xs text-zinc-400 hidden group-hover:inline transition-opacity">
                                     Attach
                                 </span>
@@ -82,13 +85,15 @@ export function VercelV0Chat() {
                         <div className="flex items-center gap-2">
                             <button
                                 type="button"
+                                aria-label="Add project"
                                 className="px-2 py-1 rounded-lg text-sm text-zinc-400 transition-colors border border-dashed border-zinc-700 hover:border-zinc-600 hover:bg-zinc-800 flex items-center justify-between gap-1"
                             >
-                                <PlusIcon className="w-4 h-4" />
+                                <PlusIcon className="w-4 h-4" aria-hidden="true" />
                                 Project
                             </button>
                             <button
-                                type="button"
+                                type="submit"
+                                aria-label="Send message"
                                 className={cn(
                                     "px-1.5 py-1.5 rounded-lg text-sm transition-colors border border-zinc-700 hover:border-zinc-600 hover:bg-zinc-800 flex items-center justify-between gap-1",
                                     value.trim()
@@ -103,6 +108,7 @@ export function VercelV0Chat() {
                                             ? "text-black"
                                             : "text-zinc-400"
                                     )}
+                                    aria-hidden="true"
                                 />
                                 <span className="sr-only">Send</span>
                             </button>
@@ -113,23 +119,23 @@ export function VercelV0Chat() {
                 <div className="mt-4 -mx-4 px-4 sm:mx-0 sm:px-0">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 sm:overflow-x-auto sm:pb-2 sm:justify-center scrollbar-hide">
                         <ActionButton
-                            icon={<ImageIcon className="w-4 h-4" />}
+                            icon={<ImageIcon className="w-4 h-4" aria-hidden={true} />}
                             label="Clone a Screenshot"
                         />
                         <ActionButton
-                            icon={<Figma className="w-4 h-4" />}
+                            icon={<Figma className="w-4 h-4" aria-hidden={true} />}
                             label="Import from Figma"
                         />
                         <ActionButton
-                            icon={<FileUp className="w-4 h-4" />}
+                            icon={<FileUp className="w-4 h-4" aria-hidden={true} />}
                             label="Upload a Project"
                         />
                         <ActionButton
-                            icon={<MonitorIcon className="w-4 h-4" />}
+                            icon={<MonitorIcon className="w-4 h-4" aria-hidden={true} />}
                             label="Landing Page"
                         />
                         <ActionButton
-                            icon={<CircleUserRound className="w-4 h-4" />}
+                            icon={<CircleUserRound className="w-4 h-4" aria-hidden={true} />}
                             label="Sign Up Form"
                         />
                     </div>
@@ -148,6 +154,7 @@ function ActionButton({ icon, label }: ActionButtonProps) {
     return (
         <button
             type="button"
+            aria-label={label}
             className="flex items-center gap-2 w-full sm:w-auto px-3 sm:px-4 py-2 bg-neutral-900 hover:bg-neutral-800 rounded-full border border-neutral-800 text-neutral-400 hover:text-white transition-colors whitespace-nowrap flex-shrink-0"
         >
             {icon}

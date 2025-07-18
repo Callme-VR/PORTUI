@@ -18,7 +18,7 @@ export default function List05() {
                         <div className="w-24 h-24 rounded-2xl shadow-lg overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop"
-                                alt="Featured Album"
+                                alt="Featured Album cover for Weekly Mix"
                                 className="w-full h-full object-cover"
                             />
                         </div>
@@ -39,6 +39,7 @@ export default function List05() {
                     <div className="flex items-center gap-4">
                         <button
                             type="button"
+                            aria-label="Play Weekly Mix"
                             className="h-9 w-9 flex items-center justify-center rounded-full
                             bg-rose-500 hover:bg-rose-600 transition-colors"
                         >
@@ -74,6 +75,7 @@ export default function List05() {
                     <div className="flex items-center gap-3">
                         <button
                             type="button"
+                            aria-label="Like Summer Nights"
                             className="opacity-0 group-hover:opacity-100 transition-opacity"
                         >
                             <Heart className="w-4 h-4 text-zinc-400 hover:text-rose-500 transition-colors" />
@@ -83,6 +85,7 @@ export default function List05() {
                         </span>
                         <button
                             type="button"
+                            aria-label="More options for Summer Nights"
                             className="opacity-0 group-hover:opacity-100 transition-opacity"
                         >
                             <MoreHorizontal className="w-5 h-5 text-zinc-400" />
@@ -105,6 +108,7 @@ export default function List05() {
                     <div className="flex items-center gap-3">
                         <button
                             type="button"
+                            aria-label="Like Midnight Drive"
                             className="opacity-0 group-hover:opacity-100 transition-opacity"
                         >
                             <Heart className="w-4 h-4 text-zinc-400 hover:text-rose-500 transition-colors" />
@@ -114,6 +118,7 @@ export default function List05() {
                         </span>
                         <button
                             type="button"
+                            aria-label="More options for Midnight Drive"
                             className="opacity-0 group-hover:opacity-100 transition-opacity"
                         >
                             <MoreHorizontal className="w-5 h-5 text-zinc-400" />

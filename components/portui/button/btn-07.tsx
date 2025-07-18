@@ -22,20 +22,14 @@ export default function Btn07({
     const [isProcessing, setIsProcessing] = useState(false);
     const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
     const [isScaling, setIsScaling] = useState(false);
-    const [progress, setProgress] = useState(0);
 
     useEffect(() => {
         if (isProcessing) {
             const startTime = Date.now();
             const interval = setInterval(() => {
                 const elapsed = Date.now() - startTime;
-                const newProgress = (elapsed / processDuration) * 100;
-
-                if (newProgress >= 100) {
+                if ((elapsed / processDuration) * 100 >= 100) {
                     clearInterval(interval);
-                    setProgress(100);
-                } else {
-                    setProgress(newProgress);
                 }
             }, 10);
 
@@ -48,7 +42,6 @@ export default function Btn07({
 
         setIsProcessing(true);
         setIsSuccess(null);
-        setProgress(0);
 
         await new Promise((resolve) => setTimeout(resolve, processDuration));
         const success = onProcess ? await onProcess() : true;
@@ -59,7 +52,6 @@ export default function Btn07({
 
         setTimeout(() => {
             setIsSuccess(null);
-            setProgress(0);
             setIsScaling(false);
         }, 2000);
     }
@@ -76,6 +68,15 @@ export default function Btn07({
                 isProcessing && "cursor-wait",
                 className
             )}
+            aria-label={
+                isSuccess === null
+                    ? isProcessing
+                        ? "Processing download"
+                        : "Download"
+                    : isSuccess
+                    ? "Download complete"
+                    : "Download failed"
+            }
             onClick={handleClick}
             disabled={isProcessing}
             {...props}
@@ -94,20 +95,21 @@ export default function Btn07({
                                 "group-hover:scale-110",
                                 isProcessing && "animate-bounce"
                             )}
+                            aria-hidden="true"
                         />
-                        <span>
+                        <span aria-live="polite">
                             {isProcessing ? "Processing..." : "Download"}
                         </span>
                     </>
                 ) : isSuccess ? (
                     <>
-                        <Check className="w-4 h-4 text-green-500" />
-                        <span className="text-green-500">Complete!</span>
+                        <Check className="w-4 h-4 text-green-500" aria-hidden="true" />
+                        <span className="text-green-500" aria-live="polite">Complete!</span>
                     </>
                 ) : (
                     <>
-                        <X className="w-4 h-4 text-red-500" />
-                        <span className="text-red-500">Failed</span>
+                        <X className="w-4 h-4 text-red-500" aria-hidden="true" />
+                        <span className="text-red-500" aria-live="polite">Failed</span>
                     </>
                 )}
             </div>

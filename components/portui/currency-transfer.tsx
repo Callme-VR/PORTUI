@@ -1,36 +1,39 @@
-"use client"
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, RefreshCw, Copy, Check } from "lucide-react"
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, RefreshCw, Copy, Check } from "lucide-react";
 
 interface CheckmarkProps {
-  size?: number
-  strokeWidth?: number
-  color?: string
-  className?: string
+  size?: number;
+  strokeWidth?: number;
+  color?: string;
+  className?: string;
 }
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
-  visible: (i: number) => ({
+  visible: {
     pathLength: 1,
     opacity: 1,
     transition: {
       pathLength: {
-        delay: i * 0.2,
-        type: "spring",
+        delay: 0.2,
         duration: 1.5,
-        bounce: 0.2,
-        ease: "easeInOut",
       },
-      opacity: { delay: i * 0.2, duration: 0.2 },
+      opacity: { delay: 0.2, duration: 0.2 },
     },
-  }),
-}
+  },
+};
 
-export function Checkmark({ size = 100, strokeWidth = 2, color = "currentColor", className = "" }: CheckmarkProps) {
+export function Checkmark({
+  size = 100,
+  strokeWidth = 2,
+  color = "currentColor",
+  className = "",
+}: CheckmarkProps) {
   return (
     <motion.svg
       width={size}
@@ -39,6 +42,7 @@ export function Checkmark({ size = 100, strokeWidth = 2, color = "currentColor",
       initial="hidden"
       animate="visible"
       className={className}
+      aria-label="Animated Checkmark"
     >
       <title>Animated Checkmark</title>
       <motion.circle
@@ -47,7 +51,6 @@ export function Checkmark({ size = 100, strokeWidth = 2, color = "currentColor",
         r="40"
         stroke={color}
         variants={draw}
-        custom={0}
         style={{
           strokeWidth,
           strokeLinecap: "round",
@@ -58,7 +61,6 @@ export function Checkmark({ size = 100, strokeWidth = 2, color = "currentColor",
         d="M30 50L45 65L70 35"
         stroke={color}
         variants={draw}
-        custom={1}
         style={{
           strokeWidth,
           strokeLinecap: "round",
@@ -67,33 +69,31 @@ export function Checkmark({ size = 100, strokeWidth = 2, color = "currentColor",
         }}
       />
     </motion.svg>
-  )
+  );
 }
 
 export default function CurrencyTransfer() {
-  const [copied, setCopied] = useState(false)
-  const [isHovering, setIsHovering] = useState(false)
-  const [showDetails, setShowDetails] = useState(false)
-  const [isResetting, setIsResetting] = useState(false)
+  const [copied, setCopied] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+  const [isResetting, setIsResetting] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("Transaction ID: TRX-28974651")
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
+    navigator.clipboard.writeText("Transaction ID: TRX-28974651");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleReset = () => {
-    setIsResetting(true)
+    setIsResetting(true);
     setTimeout(() => {
-      setIsResetting(false)
-      setShowDetails(false)
-    }, 1000)
-  }
+      setIsResetting(false);
+      setShowDetails(false);
+    }, 1000);
+  };
 
   return (
-    <Card
-      className="w-full max-w-sm mx-auto p-6 min-h-[300px] flex flex-col justify-center bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 backdrop-blur-xs relative overflow-hidden"
-    >
+    <Card className="w-full max-w-sm mx-auto p-6 min-h-[300px] flex flex-col justify-center bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 backdrop-blur-xs relative overflow-hidden">
       {/* Background pulse effect */}
       <motion.div
         className="absolute inset-0 bg-emerald-500/5 rounded-xl"
@@ -221,6 +221,7 @@ export default function CurrencyTransfer() {
                         strokeLinejoin="round"
                         animate={isHovering ? { y: [-1, 1, -1] } : {}}
                         transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
+                        aria-label="From"
                       >
                         <title>From</title>
                         <path d="M12 19V5M5 12l7-7 7 7" />
@@ -274,6 +275,7 @@ export default function CurrencyTransfer() {
                         strokeLinejoin="round"
                         animate={isHovering ? { y: [1, -1, 1] } : {}}
                         transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
+                        aria-label="To"
                       >
                         <title>To</title>
                         <path d="M12 5v14M5 12l7 7 7-7" />
@@ -348,6 +350,8 @@ export default function CurrencyTransfer() {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         className="text-zinc-500 dark:text-zinc-400 hover:text-emerald-500"
+                        type="button"
+                        aria-label="Copy Transaction ID"
                       >
                         {copied ? <Check size={14} /> : <Copy size={14} />}
                       </motion.button>
@@ -365,6 +369,7 @@ export default function CurrencyTransfer() {
                 size="sm"
                 className="bg-transparent border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-800"
                 onClick={handleReset}
+                type="button"
               >
                 <RefreshCw size={14} className="mr-2" />
                 New Transfer
@@ -376,6 +381,9 @@ export default function CurrencyTransfer() {
                 size="sm"
                 className="bg-transparent border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-800"
                 onClick={() => setShowDetails(!showDetails)}
+                type="button"
+                aria-expanded={showDetails}
+                aria-controls="currency-transfer-details"
               >
                 {showDetails ? "Hide Details" : "View Details"}
                 <motion.div animate={{ rotate: showDetails ? 90 : 0 }} transition={{ duration: 0.2 }} className="ml-2">
@@ -387,5 +395,5 @@ export default function CurrencyTransfer() {
         </motion.div>
       </CardContent>
     </Card>
-  )
+  );
 }

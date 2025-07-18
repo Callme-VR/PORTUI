@@ -63,7 +63,7 @@ export default function Alert04() {
                                 "text-violet-600 dark:text-violet-300"
                             )}
                         >
-                            You've just hit 1,000 followers on your journey!
+                            we have just hit 1,000 followers on your journey!
                         </motion.p>
                     </div>
                 </div>

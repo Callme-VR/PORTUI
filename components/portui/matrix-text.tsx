@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useMemo } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface LetterState {
@@ -99,17 +99,14 @@ const MatrixText = ({
 
     const motionVariants = useMemo(
         () => ({
-            // initial: {
-            //     color: "rgb(var(--foreground-rgb))",
-            // },
             matrix: {
                 color: "#00ff00",
                 textShadow: "0 2px 4px rgba(0, 255, 0, 0.5)",
             },
-            // normal: {
-            //     color: "rgb(var(--foreground-rgb))",
-            //     textShadow: "none",
-            // },
+            normal: {
+                color: "inherit",
+                textShadow: "none",
+            },
         }),
         []
     );

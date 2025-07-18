@@ -176,7 +176,7 @@ function Faq02() {
                         Still have questions?
                     </p>
                     <p className="text-xs text-gray-600 dark:text-gray-400 mb-4">
-                        We're here to help you
+                        We here to help you
                     </p>
                     <button
                         type="button"

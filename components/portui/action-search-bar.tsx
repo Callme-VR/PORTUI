@@ -354,7 +354,7 @@ export default function ActionSearchBar({
 
   // Global keyboard shortcut to focus search
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleGlobalKeyDown = (e: globalThis.KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault()
         inputRef.current?.focus()
@@ -362,8 +362,8 @@ export default function ActionSearchBar({
       }
     }
 
-    window.addEventListener("keydown", handleKeyDown as any)
-    return () => window.removeEventListener("keydown", handleKeyDown as any)
+    window.addEventListener("keydown", handleGlobalKeyDown)
+    return () => window.removeEventListener("keydown", handleGlobalKeyDown)
   }, [])
 
   const executeAction = (action: Action) => {
@@ -448,7 +448,7 @@ export default function ActionSearchBar({
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onFocus={() => setIsFocused(true)}
-              onBlur={() => setTimeout(() => setIsFocused(false), 200)}
+              onBlur={() => setTimeout(() => setIsFocused(false), 200)} // Delay to allow click events
               onKeyDown={handleKeyDown}
               className="pl-9 pr-9 py-2 h-10 text-sm rounded-lg focus-visible:ring-offset-0 bg-background border-border"
             />
