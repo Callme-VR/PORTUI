@@ -33,7 +33,7 @@ const AVATARS = [
 
 export default function AIInput_12() {
     const [value, setValue] = useState("");
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 40,
         maxHeight: 200,
     });
@@ -42,7 +42,7 @@ export default function AIInput_12() {
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             setValue("");
-            adjustHeight(true);
+            adjustHeight();
         }
     };
 
@@ -88,7 +88,7 @@ export default function AIInput_12() {
                         <Textarea
                             id="ai-input-12"
                             value={value}
-                            ref={textareaRef}
+                            ref={textAreaRef}
                             placeholder="Type your message..."
                             className={cn(
                                 "w-full rounded-xl px-4 border-none resize-none bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 dark:text-white placeholder:text-black/70 dark:placeholder:text-white/70",

@@ -11,7 +11,7 @@ const SPEED = 30;
 
 export default function AIInput_05() {
     const [inputValue, setInputValue] = useState("");
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 50,
         maxHeight: 200,
     });
@@ -20,7 +20,7 @@ export default function AIInput_05() {
 
     const handleSubmit = useCallback(() => {
         setInputValue("");
-        adjustHeight(true);
+        adjustHeight();
     }, [adjustHeight]);
 
     useEffect(() => {
@@ -53,7 +53,7 @@ export default function AIInput_05() {
                     id="ai-input-05"
                     placeholder="Ask me anything!"
                     className="max-w-xl bg-black/5 dark:bg-white/5 w-full rounded-3xl pl-4 pr-12 placeholder:text-black/70 dark:placeholder:text-white/70 border-none text-black dark:text-white resize-none text-wrap min-h-[40px] py-4"
-                    ref={textareaRef}
+                    ref={textAreaRef}
                     value={inputValue}
                     onKeyDown={(e) => {
                         if (e.key === "Enter" && !e.shiftKey) {

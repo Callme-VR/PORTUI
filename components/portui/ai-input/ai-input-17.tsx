@@ -8,7 +8,7 @@ import { ArrowUpCircle, Paperclip, Globe, Figma } from "lucide-react";
 
 export default function AIInput_17() {
     const [value, setValue] = useState("");
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 80,
         maxHeight: 200,
     });
@@ -18,7 +18,7 @@ export default function AIInput_17() {
             e.preventDefault();
             if (value.trim()) {
                 setValue("");
-                adjustHeight(true);
+                adjustHeight();
             }
         }
     };
@@ -29,7 +29,7 @@ export default function AIInput_17() {
                 <div className="relative flex flex-col border border-black/10 dark:border-white/10 rounded-xl">
                     <div className="overflow-y-auto">
                         <Textarea
-                            ref={textareaRef}
+                            ref={textAreaRef}
                             value={value}
                             onChange={(e) => {
                                 setValue(e.target.value);

@@ -21,7 +21,7 @@ export default function AIInput_11() {
         isModelMenuOpen: false,
     });
 
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 40,
         maxHeight: 200,
     });
@@ -38,7 +38,7 @@ export default function AIInput_11() {
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             updateState({ value: "" });
-            adjustHeight(true);
+            adjustHeight();
         }
     };
 
@@ -68,7 +68,7 @@ export default function AIInput_11() {
                                 "max-w-xl w-full rounded-3xl pl-2 pr-10 placeholder:text-black/70 dark:placeholder:text-white/70 border-none ring-black/30 dark:ring-white/30 text-black dark:text-white resize-none text-wrap py-2 bg-transparent",
                                 "min-h-[40px]"
                             )}
-                            ref={textareaRef}
+                            ref={textAreaRef}
                             value={state.value}
                             onChange={(e) => {
                                 updateState({ value: e.target.value });

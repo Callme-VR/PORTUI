@@ -30,7 +30,7 @@ const FileDisplay = ({ fileName, onClear }: FileDisplayProps) => (
 export default function AIInput_09() {
     const [inputValue, setInputValue] = useState<string>("");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 56,
         maxHeight: 200,
     });
@@ -52,7 +52,7 @@ export default function AIInput_09() {
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             setInputValue("");
-            adjustHeight(true);
+            adjustHeight();
         }
     };
 
@@ -120,7 +120,7 @@ export default function AIInput_09() {
                             "max-w-xl bg-black/5 dark:bg-white/5 w-full rounded-3xl pl-14 pr-10 py-4 placeholder:text-black/70 dark:placeholder:text-white/70 border-none ring-black/30 dark:ring-white/30 text-black dark:text-white resize-none text-wrap",
                             "min-h-[56px]"
                         )}
-                        ref={textareaRef}
+                        ref={textAreaRef}
                         value={inputValue}
                         onKeyDown={handleKeyDown}
                         onChange={(e) => {

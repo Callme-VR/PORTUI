@@ -56,7 +56,7 @@ export default function AIInput_10() {
         isModelMenuOpen: false,
     });
 
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 40,
         maxHeight: 200,
     });
@@ -79,7 +79,7 @@ export default function AIInput_10() {
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             updateState({ value: "" });
-            adjustHeight(true);
+            adjustHeight();
         }
     };
 
@@ -216,7 +216,7 @@ export default function AIInput_10() {
 
                         <Textarea
                             id="ai-input-10"
-                            ref={textareaRef}
+                            ref={textAreaRef}
                             value={state.value}
                             placeholder="Type your message..."
                             className={cn(

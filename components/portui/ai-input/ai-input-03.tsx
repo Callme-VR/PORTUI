@@ -46,7 +46,7 @@ export default function AIInput_03() {
     const [selectedItem, setSelectedItem] = useState<string | null>(
         "Make shorter"
     );
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 52,
         maxHeight: 200,
     });
@@ -62,7 +62,7 @@ export default function AIInput_03() {
     const handleSubmit = () => {
         setInputValue("");
         setSelectedItem(null);
-        adjustHeight(true);
+        adjustHeight();
     };
 
     return (
@@ -72,7 +72,7 @@ export default function AIInput_03() {
                     <div className="flex flex-col">
                         <div className="overflow-y-auto max-h-[200px]">
                             <Textarea
-                                ref={textareaRef}
+                                ref={textAreaRef}
                                 id="ai-input-03"
                                 placeholder="Enter your text here..."
                                 className={cn(

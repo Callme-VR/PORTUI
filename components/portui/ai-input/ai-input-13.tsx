@@ -15,7 +15,7 @@ interface SidebarSection {
 
 export default function AIInput_13() {
     const [value, setValue] = useState("");
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 40,
         maxHeight: 200,
     });
@@ -43,7 +43,7 @@ export default function AIInput_13() {
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             setValue("");
-            adjustHeight(true);
+            adjustHeight();
         }
     };
     return (
@@ -59,7 +59,7 @@ export default function AIInput_13() {
                                 "w-full rounded-xl px-4 border-none resize-none bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 dark:text-white placeholder:text-black/70 dark:placeholder:text-white/70",
                                 "min-h-[40px]"
                             )}
-                            ref={textareaRef}
+                            ref={textAreaRef}
                             onKeyDown={handleKeyDown}
                             onChange={(e) => {
                                 setValue(e.target.value);

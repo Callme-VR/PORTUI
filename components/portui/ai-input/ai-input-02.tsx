@@ -31,7 +31,7 @@ export default function AIInput_02() {
     const { fileName, fileInputRef, handleFileSelect, clearFile } =
         useFileInput({ accept: "image/*", maxSize: 5 });
 
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 52,
         maxHeight: 200,
     });
@@ -71,7 +71,7 @@ export default function AIInput_02() {
                             "min-h-[52px]",
                             "max-h-[200px]"
                         )}
-                        ref={textareaRef}
+                        ref={textAreaRef}
                         value={inputValue}
                         onChange={(e) => {
                             setInputValue(e.target.value);
@@ -81,7 +81,7 @@ export default function AIInput_02() {
                             if (e.key === "Enter" && !e.shiftKey) {
                                 e.preventDefault();
                                 setInputValue("");
-                                adjustHeight(true);
+                                adjustHeight();
                             }
                         }}
                     />

@@ -8,14 +8,14 @@ import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
 
 export default function AIInput_06() {
     const [inputValue, setInputValue] = useState("");
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 50,
         maxHeight: 200,
     });
 
     const handleSubmit = () => {
         setInputValue("");
-        adjustHeight(true);
+        adjustHeight();
     };
 
     return (
@@ -23,7 +23,7 @@ export default function AIInput_06() {
             <div className="relative max-w-xl w-full mx-auto flex items-start flex-col gap-2">
                 <div className="relative max-w-xl w-full mx-auto">
                     <Textarea
-                        ref={textareaRef}
+                        ref={textAreaRef}
                         id="ai-input-06"
                         placeholder="Ask me anything!"
                         className={cn(

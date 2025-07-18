@@ -10,7 +10,7 @@ export default function AIInput_07() {
     const [inputValue, setInputValue] = useState("");
     const [submitted, setSubmitted] = useState(true);
     const [isAnimating, setIsAnimating] = useState(true);
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 56,
         maxHeight: 200,
     });
@@ -45,7 +45,7 @@ export default function AIInput_07() {
                             "max-w-xl bg-black/5 dark:bg-white/5 w-full rounded-3xl pl-6 pr-10 py-4 placeholder:text-black/70 dark:placeholder:text-white/70 border-none ring-black/30 dark:ring-white/30 text-black dark:text-white resize-none text-wrap leading-[1.2]",
                             "min-h-[56px]"
                         )}
-                        ref={textareaRef}
+                        ref={textAreaRef}
                         value={inputValue}
                         onChange={(e) => {
                             setInputValue(e.target.value);

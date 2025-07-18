@@ -23,7 +23,7 @@ interface ToolbarButton {
 
 export default function AIInput_15() {
     const [value, setValue] = useState("");
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 96,
         maxHeight: 300,
     });
@@ -56,7 +56,7 @@ export default function AIInput_15() {
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             setValue("");
-            adjustHeight(true);
+            adjustHeight();
         }
     };
 
@@ -123,7 +123,7 @@ export default function AIInput_15() {
                                     "w-full rounded-xl rounded-b-none px-4 py-3 bg-black/5 dark:bg-white/5 border-none dark:text-white placeholder:text-black/70 dark:placeholder:text-white/70 resize-none focus-visible:ring-0 focus-visible:ring-offset-0",
                                     "min-h-[96px]"
                                 )}
-                                ref={textareaRef}
+                                ref={textAreaRef}
                                 onKeyDown={handleKeyDown}
                                 onChange={(e) => {
                                     setValue(e.target.value);

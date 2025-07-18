@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, Brain } from "lucide-react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
@@ -53,7 +53,7 @@ function ToggleButton({ icon, label, isActive, onClick }: ToggleButtonProps) {
 export default function AIInput_14() {
     const [value, setValue] = useState("");
     const [useMemory, setUseMemory] = useState(false);
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textAreaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 40,
         maxHeight: 200,
     });
@@ -62,7 +62,7 @@ export default function AIInput_14() {
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             setValue("");
-            adjustHeight(true);
+            adjustHeight();
         }
     };
 
@@ -78,7 +78,7 @@ export default function AIInput_14() {
                                 "w-full rounded-xl px-4 border-none resize-none bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 dark:text-white placeholder:text-black/70 dark:placeholder:text-white/70",
                                 "min-h-[40px]"
                             )}
-                            ref={textareaRef}
+                            ref={textAreaRef}
                             onKeyDown={handleKeyDown}
                             onChange={(e) => {
                                 setValue(e.target.value);
