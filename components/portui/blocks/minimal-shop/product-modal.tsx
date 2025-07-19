@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
-import { X, Plus, Minus } from "lucide-react";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { X } from "lucide-react";
 import { type Product } from "./data";
 
 interface ProductModalProps {
@@ -16,8 +15,6 @@ export function ProductModal({
     onClose,
     onAddToCart,
 }: ProductModalProps) {
-    const [quantity, setQuantity] = useState(1);
-
     return (
         <>
             <motion.div

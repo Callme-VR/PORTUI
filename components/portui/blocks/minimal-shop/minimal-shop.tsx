@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ProductGrid } from "./product-grid";
 import { CartDrawer } from "./cart-drawer";
