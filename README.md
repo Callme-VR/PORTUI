@@ -129,5 +129,5 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Credits
 
-- Inspired by [shadcn/ui](https://ui.shadcn.com/), [Vercel](https://vercel.com/), and the open-source community.
+- Inspired by [shadcn/ui](https://ui.shadcn.com/), [Vercel](https://vercel.com/),[Framer Motion](https://motion.dev/) and the open-source community.
 
