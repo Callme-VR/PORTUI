@@ -2,7 +2,6 @@
 
 import { Flame, Menu, X, ArrowUpRight } from "lucide-react";
 import { Link } from "next-view-transitions";
-import { Link as ViewTransitionsLink } from "next-view-transitions";
 import ThemeToggle from "../ui/theme-toggle";
 import { HeaderPro } from "./header-pro";
 import { useState } from "react";
@@ -58,21 +57,21 @@ export const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              <ViewTransitionsLink
+              <Link
                 href="/docs/components/background-paths"
                 className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors duration-300 relative group"
               >
                 Components
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white group-hover:w-full transition-all duration-300" />
-              </ViewTransitionsLink>
+              </Link>
 
-              <ViewTransitionsLink
+              <Link
                 href="/pricing"
                 className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors duration-300 relative group"
               >
                 Pricing
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white group-hover:w-full transition-all duration-300" />
-              </ViewTransitionsLink>
+              </Link>
 
               <Link
                 href="#"
@@ -154,21 +153,21 @@ export const Header = () => {
             <div className="px-4 py-6 space-y-6">
               {/* Mobile Navigation Links */}
               <nav className="space-y-4">
-                <ViewTransitionsLink
+                <Link
                   href="/docs/components/background-paths"
                   className="block text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors duration-300 py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Components
-                </ViewTransitionsLink>
+                </Link>
 
-                <ViewTransitionsLink
+                <Link
                   href="/pricing"
                   className="block text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors duration-300 py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Pricing
-                </ViewTransitionsLink>
+                </Link>
 
                 <Link
                   href="#"
