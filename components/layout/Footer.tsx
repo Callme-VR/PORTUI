@@ -27,12 +27,7 @@ export function Footer() {
       { name: "Discord", href: "#" },
       { name: "Blog", href: "#" },
     ],
-    company: [
-      { name: "About", href: "#" },
-      { name: "Contact", href: "#" },
-      { name: "Privacy", href: "#" },
-      { name: "Terms", href: "#" },
-    ],
+ 
   };
 
   const socialLinks = [
@@ -48,7 +43,7 @@ export function Footer() {
     },
     {
       name: "Email",
-      href: "mailto:contact@portui.com",
+      href: "vr347147@gmail.com",
       icon: <Mail className="w-5 h-5" />,
     },
   ];
@@ -155,7 +150,7 @@ export function Footer() {
                 
                 <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
                   <Sparkles className="w-4 h-4 text-purple-500" />
-                  <span>Join 2,000+ developers building amazing things</span>
+                  <span>Join 2,000+ developers building amazing things and  ui Componenents</span>
                 </div>
               </div>
             </motion.div>
@@ -199,7 +194,7 @@ export function Footer() {
               <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
                 <span>&copy; {currentYear} PORTUI. Made with</span>
                 <Heart className="w-4 h-4 text-red-500 fill-current" />
-                <span>by the PORTUI team.</span>
+                <span>by the vishal Rajput</span>
               </div>
 
               <div className="flex items-center gap-6 text-sm">
