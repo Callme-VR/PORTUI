@@ -1,176 +1,348 @@
 "use client";
 
 import { motion } from "framer-motion";
-// import TailwindCSS from "../icons/tailwindcss";
 import BrowseComponentsButton from "../ui/browse-button";
 import BrowseBlocksButton from "../ui/browse-block";
 import Feature from "./feature";
-import { Link } from "next-view-transitions";
 import Profile01 from "../portui/profile/profile-01";
 import Card08 from "../portui/card/card-08";
 import Aiinput03 from "../portui/ai-input/ai-input-03";
 import Btn02 from "../portui/button/btn-02";
 import Btn08 from "../portui/button/btn-08";
-// import Input09 from "../portui/input/input-09";
 import Input_04 from "../portui/input/input-04";
 
 export default function ThemeEditor() {
   return (
-    <div className="min-h-screen bg-black text-white px-6 py-10 flex flex-col lg:flex-row items-center justify-between gap-10">
-      {/* Tailwind CSS 4.0 Update Banner
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="absolute top-0 left-0 right-0 py-3 flex justify-center items-center gap-2 bg-zinc-900/80 backdrop-blur-sm z-50 border-b border-zinc-800"
-      >
-        <div className="flex items-center gap-2 text-sm sm:text-base font-medium text-zinc-100">
-          <TailwindCSS className="w-5 h-5 text-teal-400" />
-          Now updated for Tailwind CSS 4.0!
-          <span className="ml-2 px-3 py-1 bg-purple-700 rounded-full text-xs font-semibold flex items-center gap-1">
-            <svg
-              className="w-3 h-3"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.832 1.512l-7 11A1 1 0 019 19v-5H5a1 1 0 01-.832-1.512l7-11z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-            New
-          </span>
-        </div>
-      </motion.div> */}
+    <>
+      {/* First Page - Hero Section with Color Palette */}
+      <div className="min-h-screen bg-black text-white px-6 py-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+        
+        {/* Left Section - Content */}
+        <div className="w-full lg:w-1/2 space-y-8 mt-20 lg:mt-0">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
 
-      {/* Left Section */}
-      <div className="w-full lg:w-1/2 space-y-8 mt-20 lg:mt-0">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <button className="px-6 py-3 rounded-full bg-zinc-900 border border-zinc-700 text-sm">
-            ✨ Visual Theme Editor
-          </button>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.2] mt-4">
-            Design Your <span className="italic text-zinc-400">Perfect</span>
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-fuchsia-500 to-purple-500">
-              shadcn/ui Theme
-            </span>
-          </h1>
+            <button className="px-6 py-3 rounded-full bg-zinc-900 border border-zinc-700 text-sm">
+              ✨ Visual Theme Editor
+            </button>
 
-          <p className="text-zinc-400 text-lg px-4 py-4">
-            Customize colors, typography, and layouts with a real-time preview{" "}
-            with{" "}
-            <span className="text-pink-400 font-semibold">Framer Motion</span>,{" "}
-            <span className="text-purple-400 font-semibold">Shadcn/ui</span>,{" "}
-            <span className="text-blue-400 font-semibold">Tailwindcss</span>,
-            and <span className="text-yellow-400 font-semibold">Next.js</span>
-          </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.2] mt-4">
+              Design Your <span className="italic text-zinc-400">Perfect</span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-fuchsia-500 to-purple-500">
+                shadcn/ui Theme
+              </span>
+            </h1>
 
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-5 text-zinc-50">
-            <span className="flex items-center gap-1 text-sm">
-              ✅ Real-time Preview
-            </span>
-            <span className="flex items-center gap-1 text-sm">
-              ✅ Export to Tailwind
-            </span>
-            <span className="flex items-center gap-1 text-sm">
-              ✅ Beautiful Presets
-            </span>
-          </div>
+            <p className="text-zinc-400 text-lg px-4 py-4">
+              Customize colors, typography, and layouts with a real-time preview{" "}
+              with{" "}
+              <span className="text-pink-400 font-semibold">Framer Motion</span>,{" "}
+              <span className="text-purple-400 font-semibold">Shadcn/ui</span>,{" "}
+              <span className="text-blue-400 font-semibold">Tailwindcss</span>,
+              and <span className="text-yellow-400 font-semibold">Next.js</span>
+            </p>
 
-          {/* Browse Buttons */}
-          <div className="flex gap-4 pt-6">
-            <BrowseComponentsButton />
-            <BrowseBlocksButton />
-          </div>
-          {/* Powered by section */}
-          <Feature />
-        </motion.div>
-      </div>
-
-      <div className="w-full lg:w-[55%] flex justify-between  flex-col gap-6 lg:pl-8">
-        {/* Right Section */}
-        <motion.div
-          initial={{ opacity: 0, y: -20, scale: 0.96 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 items-center justify-center"
-        >
-          {/* card components */}
-          <div className="w-full flex flex-col items-center justify-center">
-            <span className="text-sm text-ziinc-400 dark:text-zinc-500 block mb-2 text-center">
-              Card
-            </span>
-            <Card08 />
-            {/* card components detailed */}
-          </div>
-
-          {/* action search bars*/}
-
-          <div className="w-full max-w-[600px] bg-transparent">
-            <span className="text-sm text-zinc-400 dark:text-zinc-500 block text-center mb-2">
-              Components
-            </span>
-            <Profile01 />
-            {/* action search add functionality of search bars */}
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.96 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="w-full"
-        >
-          <span className="text-sm text-zinc-400 dark:text-zinc-500 block text-center mb-2">
-            Ai Chat
-          </span>
-          <div className="w-full h-45 rounded-xl border border-zinc-200 dark:border-zinc-800 flex itmes-center justify-center">
-            <Aiinput03 />
-            {/* ai input works */}
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.96 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="w-full grid grid-cols-1 md:grid-cols-2 gap-6"
-        >
-          <div className="w-full">
-            <span className="text-sm text-zinc-400 dark:text-zinc-500 mb-2">
-              Buttons
-            </span>
-            <div className="w-full h-45 rounded-xl border border-zinc-200 dark:border-zinc-800 flex flex-col gap-3 itmes-center text-center justify-center">
-              <Link href={"/docs/components/button"}>
-                {}
-                <Btn02 />
-              </Link>
-              <Link href={"/docs/components/button"}>
-                {/* buttons */}
-                <Btn08 />
-              </Link>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-5 text-zinc-50">
+              <span className="flex items-center gap-1 text-sm">
+                ✅ Real-time Preview
+              </span>
+              <span className="flex items-center gap-1 text-sm">
+                ✅ Export to Tailwind
+              </span>
+              <span className="flex items-center gap-1 text-sm">
+                ✅ Beautiful Presets
+              </span>
             </div>
+
+            {/* Browse Buttons */}
+            <div className="flex gap-4 pt-6">
+              <BrowseComponentsButton />
+              <BrowseBlocksButton />
+            </div>
+            
+            {/* Powered by section */}
+            <Feature />
+          </motion.div>
+        </div>
+
+                 {/* Right Section - Color Palette */}
+         <div className="w-full lg:w-2/5 flex justify-center lg:justify-end">
+           <motion.div
+             initial={{ opacity: 0, y: -20, scale: 0.96 }}
+             animate={{ opacity: 1, y: 0, scale: 1 }}
+             transition={{ duration: 1, delay: 0.6 }}
+             className="w-full max-w-lg"
+           >
+             {/* Enhanced Color Palette Card */}
+             <div className="bg-gradient-to-br from-zinc-900/95 to-zinc-800/95 backdrop-blur-xl border border-zinc-700/50 rounded-2xl p-8 shadow-2xl">
+               <h3 className="text-2xl font-bold mb-8 text-center bg-gradient-to-r from-white to-zinc-300 bg-clip-text text-transparent">
+                 Color Palette
+               </h3>
+               
+               {/* Beautiful Color Swatches Grid */}
+               <div className="grid grid-cols-5 gap-6 mb-8">
+                 <div className="flex flex-col items-center group">
+                   <div className="relative">
+                     <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 via-rose-500 to-purple-600 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-pink-500/25"></div>
+                     <div className="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full shadow-lg flex items-center justify-center">
+                       <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
+                     </div>
+                   </div>
+                   <div className="text-center mt-3">
+                     <p className="text-sm font-semibold text-white">Primary</p>
+                     <p className="text-xs text-zinc-400 mt-1">#ec4899</p>
+                   </div>
+                 </div>
+                 
+                 <div className="flex flex-col items-center group">
+                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-zinc-700 to-zinc-600 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zinc-500/25"></div>
+                   <div className="text-center mt-3">
+                     <p className="text-sm font-semibold text-white">Secondary</p>
+                     <p className="text-xs text-zinc-400 mt-1">#374151</p>
+                   </div>
+                 </div>
+                 
+                 <div className="flex flex-col items-center group">
+                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-zinc-600 to-zinc-500 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zinc-400/25"></div>
+                   <div className="text-center mt-3">
+                     <p className="text-sm font-semibold text-white">Accent</p>
+                     <p className="text-xs text-zinc-400 mt-1">#4b5563</p>
+                   </div>
+                 </div>
+                 
+                 <div className="flex flex-col items-center group">
+                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-zinc-500 to-zinc-400 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zinc-300/25"></div>
+                   <div className="text-center mt-3">
+                     <p className="text-sm font-semibold text-white">Muted</p>
+                     <p className="text-xs text-zinc-400 mt-1">#6b7280</p>
+                   </div>
+                 </div>
+                 
+                 <div className="flex flex-col items-center group">
+                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-black via-zinc-900 to-zinc-800 border-2 border-zinc-600 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zinc-600/25"></div>
+                   <div className="text-center mt-3">
+                     <p className="text-sm font-semibold text-white">Background</p>
+                     <p className="text-xs text-zinc-400 mt-1">#000000</p>
+                   </div>
+                 </div>
+               </div>
+               
+               {/* Enhanced Copy Code Section */}
+               <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 rounded-xl p-4 mb-6 border border-zinc-600/50">
+                 <div className="flex items-center justify-between mb-4">
+                   <button className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg text-sm font-medium text-white transition-all duration-200 shadow-lg hover:shadow-purple-500/25">
+                     Copy Code
+                   </button>
+                   <div className="flex items-center gap-2">
+                     <div className="w-6 h-6 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center">
+                       <span className="text-xs font-bold text-white">UI</span>
+                     </div>
+                     <div className="flex gap-1">
+                       <div className="w-8 h-1 bg-zinc-600 rounded-full"></div>
+                       <div className="w-8 h-1 bg-zinc-600 rounded-full"></div>
+                     </div>
+                   </div>
+                 </div>
+                 <input 
+                   type="text" 
+                   value="oklch, hsl, rgb, hex" 
+                   readOnly
+                   className="w-full px-4 py-3 bg-zinc-900/80 border border-zinc-600/50 rounded-lg text-sm text-zinc-300 focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+                 />
+               </div>
+               
+               {/* Color Preview Bar */}
+               <div className="h-3 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full shadow-lg"></div>
+             </div>
+           </motion.div>
+         </div>
+      </div>
+
+      {/* Second Page - Component Showcase */}
+      <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16 sm:mb-20"
+          >
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            >
+              Explore Our{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+                Component Library
+              </span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto"
+            >
+              Discover a comprehensive collection of beautifully designed components, 
+              ready to enhance your next project with modern UI patterns and interactions.
+            </motion.p>
+          </motion.div>
+
+          {/* Components Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
+            
+            {/* Card Component */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-semibold mb-2">Card Components</h3>
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm">Beautiful content containers</p>
+                </div>
+                <div className="flex justify-center">
+                  <Card08 />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Profile Component */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-semibold mb-2">Profile Components</h3>
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm">User profile interfaces</p>
+                </div>
+                <div className="flex justify-center">
+                  <Profile01 />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* AI Chat Component */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-semibold mb-2">AI Chat Interface</h3>
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm">Modern chat experiences</p>
+                </div>
+                <div className="flex justify-center">
+                  <Aiinput03 />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Button Components */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-semibold mb-2">Button Components</h3>
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm">Interactive button styles</p>
+                </div>
+                <div className="flex flex-col gap-3 items-center">
+                  <Btn02 />
+                  <Btn08 />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Input Components */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-semibold mb-2">Input Components</h3>
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm">Form input elements</p>
+                </div>
+                <div className="flex justify-center">
+                  <Input_04 />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Call to Action */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-6 sm:p-8 border border-blue-200 dark:border-blue-800 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300">
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Explore More</h3>
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm">Discover our full component library</p>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <BrowseComponentsButton />
+                  <BrowseBlocksButton />
+                </div>
+              </div>
+            </motion.div>
           </div>
 
-          <div className="w-full">
-            <span className="text-sm text-zinc text-zinc-400 block text-center mb-2">
-              Input
-            </span>
-            <Link href={"/docs/components/input"}>
-              {/* input */}
-              <Input_04 />
-            </Link>
-          </div>
-        </motion.div>
+          {/* Bottom CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            viewport={{ once: true }}
+            className="text-center mt-16 sm:mt-20"
+          >
+            <div className="bg-gradient-to-r from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-800 rounded-2xl p-8 sm:p-12 border border-zinc-200 dark:border-zinc-700">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+                Ready to Build Something Amazing?
+              </h3>
+              <p className="text-zinc-600 dark:text-zinc-400 mb-8 max-w-2xl mx-auto">
+                Start building your next project with our comprehensive component library. 
+                Copy, customize, and create beautiful interfaces in minutes.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <BrowseComponentsButton />
+                <BrowseBlocksButton />
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
