@@ -17,7 +17,7 @@ function Toast(props: ToastProps) {
 
     return (
         <Link
-            href="https://arca.directory/?utm_source=codesnippetui.com&utm_medium=toast"
+            href="https://arca.directory/?utm_source=portui.com&utm_medium=toast"
             target="_blank"
             className="block"
             tabIndex={0}

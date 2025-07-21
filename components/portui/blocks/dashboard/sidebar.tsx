@@ -89,7 +89,7 @@ export default function Sidebar() {
                                 className="flex-shrink-0 block dark:hidden"
                             />
                             <span className="text-lg font-semibold hover:cursor-pointer text-gray-900 dark:text-white">
-                                codesnippetui
+                                portui
                             </span>
                         </div>
                     </Link>

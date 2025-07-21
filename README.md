@@ -119,7 +119,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🌐 Links
 
-- [Live Demo](https://codesnippetui-demo.vercel.app/)
+- [Live Demo](https://portui-demo.vercel.app/)
 - [Documentation](#)
 - [GitHub](#)
 - [Twitter](#)
