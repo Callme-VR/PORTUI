@@ -76,7 +76,7 @@ export function HeaderPro() {
           </div>
         </Link>
         <Link
-          href="#"
+          href="https://github.com/Callme-VR/PORTUI"
           target="_blank"
           className="hidden group relative md:inline-flex items-center gap-2 px-1.5 py-1.5 text-sm rounded-lg bg-zinc-900 dark:bg-zinc-100 transition-colors hover:bg-zinc-800 dark:hover:bg-zinc-200"
         >
@@ -92,7 +92,7 @@ export function HeaderPro() {
           </div>
         </Link>
         <Link
-          href="#"
+          href="https://x.com/CodeAi_Vishal"
           target="_blank"
           className="hidden group relative md:inline-flex items-center gap-2 px-1.5 py-1.5 text-sm rounded-lg bg-zinc-900 dark:bg-zinc-100 transition-colors hover:bg-zinc-800 dark:hover:bg-zinc-200"
         >
