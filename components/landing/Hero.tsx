@@ -15,22 +15,21 @@ export default function ThemeEditor() {
   return (
     <>
       {/* First Page - Hero Section with Color Palette */}
-      <div className="min-h-screen bg-black text-white px-6 py-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+      {/* First Page - Hero Section with Color Palette */}
+      <div className="min-h-screen bg-black text-white px-4 sm:px-6 py-10 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
         
         {/* Left Section - Content */}
-        <div className="w-full lg:w-1/2 space-y-8 mt-20 lg:mt-0">
+        <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left mt-20 lg:mt-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-
-
             <button className="px-6 py-3 rounded-full bg-zinc-900 border border-zinc-700 text-sm">
               ✨ Visual Theme Editor
             </button>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.2] mt-4">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mt-4">
               Design Your <span className="italic text-zinc-400">Perfect</span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-fuchsia-500 to-purple-500">
@@ -38,7 +37,7 @@ export default function ThemeEditor() {
               </span>
             </h1>
 
-            <p className="text-zinc-400 text-lg px-4 py-4">
+            <p className="text-zinc-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 px-4 py-4">
               Customize colors, typography, and layouts with a real-time preview{" "}
               with{" "}
               <span className="text-pink-400 font-semibold">Framer Motion</span>,{" "}
@@ -47,7 +46,7 @@ export default function ThemeEditor() {
               and <span className="text-yellow-400 font-semibold">Next.js</span>
             </p>
 
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-5 text-zinc-50">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 pt-5 text-zinc-50">
               <span className="flex items-center gap-1 text-sm">
                 ✅ Real-time Preview
               </span>
@@ -60,7 +59,7 @@ export default function ThemeEditor() {
             </div>
 
             {/* Browse Buttons */}
-            <div className="flex gap-4 pt-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-6">
               <BrowseComponentsButton />
               <BrowseBlocksButton />
             </div>
@@ -70,69 +69,66 @@ export default function ThemeEditor() {
           </motion.div>
         </div>
 
-                 {/* Right Section - Color Palette */}
+        {/* Right Section - Color Palette */}
          <div className="w-full lg:w-2/5 flex justify-center lg:justify-end">
            <motion.div
              initial={{ opacity: 0, y: -20, scale: 0.96 }}
              animate={{ opacity: 1, y: 0, scale: 1 }}
              transition={{ duration: 1, delay: 0.6 }}
-             className="w-full max-w-lg"
+             className="w-full max-w-md sm:max-w-lg"
            >
-             {/* Enhanced Color Palette Card */}
-             <div className="bg-gradient-to-br from-zinc-900/95 to-zinc-800/95 backdrop-blur-xl border border-zinc-700/50 rounded-2xl p-8 shadow-2xl">
-               <h3 className="text-2xl font-bold mb-8 text-center bg-gradient-to-r from-white to-zinc-300 bg-clip-text text-transparent">
+             <div className="bg-gradient-to-br from-zinc-900/95 to-zinc-800/95 backdrop-blur-xl border border-zinc-700/50 rounded-2xl p-6 sm:p-8 shadow-2xl">
+               <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-center bg-gradient-to-r from-white to-zinc-300 bg-clip-text text-transparent">
                  Color Palette
                </h3>
                
-               {/* Beautiful Color Swatches Grid */}
-               <div className="grid grid-cols-5 gap-6 mb-8">
+               <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 sm:gap-6 mb-8">
                  <div className="flex flex-col items-center group">
                    <div className="relative">
-                     <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 via-rose-500 to-purple-600 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-pink-500/25"></div>
+                     <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-pink-500 via-rose-500 to-purple-600 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-pink-500/25"></div>
                      <div className="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full shadow-lg flex items-center justify-center">
                        <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
                      </div>
                    </div>
                    <div className="text-center mt-3">
-                     <p className="text-sm font-semibold text-white">Primary</p>
+                     <p className="text-xs sm:text-sm font-semibold text-white">Primary</p>
                      <p className="text-xs text-zinc-400 mt-1">#ec4899</p>
                    </div>
                  </div>
                  
                  <div className="flex flex-col items-center group">
-                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-zinc-700 to-zinc-600 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zinc-500/25"></div>
+                   <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-zinc-700 to-zinc-600 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zinc-500/25"></div>
                    <div className="text-center mt-3">
-                     <p className="text-sm font-semibold text-white">Secondary</p>
+                     <p className="text-xs sm:text-sm font-semibold text-white">Secondary</p>
                      <p className="text-xs text-zinc-400 mt-1">#374151</p>
                    </div>
                  </div>
                  
                  <div className="flex flex-col items-center group">
-                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-zinc-600 to-zinc-500 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zinc-400/25"></div>
+                   <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-zinc-600 to-zinc-500 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zinc-400/25"></div>
                    <div className="text-center mt-3">
-                     <p className="text-sm font-semibold text-white">Accent</p>
+                     <p className="text-xs sm:text-sm font-semibold text-white">Accent</p>
                      <p className="text-xs text-zinc-400 mt-1">#4b5563</p>
                    </div>
                  </div>
                  
                  <div className="flex flex-col items-center group">
-                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-zinc-500 to-zinc-400 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zinc-300/25"></div>
+                   <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-zinc-500 to-zinc-400 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zinc-300/25"></div>
                    <div className="text-center mt-3">
-                     <p className="text-sm font-semibold text-white">Muted</p>
+                     <p className="text-xs sm:text-sm font-semibold text-white">Muted</p>
                      <p className="text-xs text-zinc-400 mt-1">#6b7280</p>
                    </div>
                  </div>
                  
                  <div className="flex flex-col items-center group">
-                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-black via-zinc-900 to-zinc-800 border-2 border-zinc-600 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zinc-600/25"></div>
+                   <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-black via-zinc-900 to-zinc-800 border-2 border-zinc-600 shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zinc-600/25"></div>
                    <div className="text-center mt-3">
-                     <p className="text-sm font-semibold text-white">Background</p>
+                     <p className="text-xs sm:text-sm font-semibold text-white">Background</p>
                      <p className="text-xs text-zinc-400 mt-1">#000000</p>
                    </div>
                  </div>
                </div>
                
-               {/* Enhanced Copy Code Section */}
                <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 rounded-xl p-4 mb-6 border border-zinc-600/50">
                  <div className="flex items-center justify-between mb-4">
                    <button className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg text-sm font-medium text-white transition-all duration-200 shadow-lg hover:shadow-purple-500/25">
@@ -156,7 +152,6 @@ export default function ThemeEditor() {
                  />
                </div>
                
-               {/* Color Preview Bar */}
                <div className="h-3 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full shadow-lg"></div>
              </div>
            </motion.div>
@@ -167,7 +162,6 @@ export default function ThemeEditor() {
       <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           
-          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -180,7 +174,7 @@ export default function ThemeEditor() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
             >
               Explore Our{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
@@ -192,17 +186,15 @@ export default function ThemeEditor() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto"
+              className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto"
             >
               Discover a comprehensive collection of beautifully designed components, 
               ready to enhance your next project with modern UI patterns and interactions.
             </motion.p>
           </motion.div>
 
-          {/* Components Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
             
-            {/* Card Component */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -221,7 +213,6 @@ export default function ThemeEditor() {
               </div>
             </motion.div>
 
-            {/* Profile Component */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -240,7 +231,6 @@ export default function ThemeEditor() {
               </div>
             </motion.div>
 
-            {/* AI Chat Component */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -259,7 +249,6 @@ export default function ThemeEditor() {
               </div>
             </motion.div>
 
-            {/* Button Components */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -279,7 +268,6 @@ export default function ThemeEditor() {
               </div>
             </motion.div>
 
-            {/* Input Components */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -298,7 +286,6 @@ export default function ThemeEditor() {
               </div>
             </motion.div>
 
-            {/* Call to Action */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -319,7 +306,6 @@ export default function ThemeEditor() {
             </motion.div>
           </div>
 
-          {/* Bottom CTA Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
