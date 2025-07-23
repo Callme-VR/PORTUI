@@ -16,28 +16,41 @@ export default function ThemeEditor() {
     <>
       {/* First Page - Hero Section with Color Palette */}
       {/* First Page - Hero Section with Color Palette */}
-      <div className="min-h-screen bg-black text-white px-4 sm:px-6 py-10 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10">
+      <div className="min-h-screen bg-black text-white px-4 sm:px-6 py-8 flex flex-col items-center justify-start gap-8 lg:flex-row lg:items-center lg:justify-center lg:gap-24">
+        {/* On desktop, center content horizontally with gap between hero and palette */}
+        {/* Increased gap, removed lg:flex-row for better mobile stacking */}
         
         {/* Left Section - Content */}
-        <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left mt-20 lg:mt-0">
+        <div className="w-full max-w-2xl lg:max-w-xl xl:max-w-2xl mx-auto space-y-6 text-center lg:text-left mt-10 lg:mt-0 flex flex-col justify-center items-center lg:items-start">
+          {/* Align all elements on same vertical axis for desktop */}
+          {/* Centered hero block with left-aligned text on desktop */}
+          {/* Removed lg:w-1/2 and lg:mt-0 for full width and proper mobile spacing */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <button className="px-6 py-3 rounded-full bg-zinc-900 border border-zinc-700 text-sm">
+            <button className="px-6 py-3 rounded-full bg-zinc-900 border border-zinc-700 text-sm lg:px-8 lg:py-4 lg:text-base mb-4 lg:mb-6">
+              {/* Larger and more spaced on desktop */}
               ✨ Visual Theme Editor
             </button>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mt-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight mt-6 mb-4 lg:mt-8 lg:mb-6 text-center lg:text-left text-white drop-shadow-xl">
+              {/* Larger, bolder headline for desktop, improved contrast */}
+              {/* Larger font and more margin on desktop, left-aligned */}
+              {/* Reduced font size for mobile, added margin below */}
               Design Your <span className="italic text-zinc-400">Perfect</span>
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-fuchsia-500 to-purple-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-fuchsia-500 to-purple-500 lg:text-7xl block mt-2 lg:mt-3">
+                {/* Even larger gradient text for desktop */}
+                {/* Larger gradient text on desktop, more spacing */}
                 shadcn/ui Theme
               </span>
             </h1>
 
-            <p className="text-zinc-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 px-4 py-4">
+            <p className="text-zinc-300 text-base sm:text-lg lg:text-xl max-w-lg mx-auto lg:mx-0 px-2 py-3 mb-4 lg:mb-6 font-medium lg:font-normal">
+              {/* Improved contrast, font size, and spacing for desktop */}
+              {/* Reduced max width and padding for mobile readability */}
               Customize colors, typography, and layouts with a real-time preview{" "}
               with{" "}
               <span className="text-pink-400 font-semibold">Framer Motion</span>,{" "}
@@ -46,14 +59,15 @@ export default function ThemeEditor() {
               and <span className="text-yellow-400 font-semibold">Next.js</span>
             </p>
 
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 pt-5 text-zinc-50">
-              <span className="flex items-center gap-1 text-sm">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 lg:gap-6 pt-3 pb-2 text-zinc-50 w-full">
+              {/* Horizontal row, left-aligned and spaced on desktop */}
+              <span className="flex items-center gap-2 text-sm lg:text-base font-medium">
                 ✅ Real-time Preview
               </span>
-              <span className="flex items-center gap-1 text-sm">
+              <span className="flex items-center gap-2 text-sm lg:text-base font-medium">
                 ✅ Export to Tailwind
               </span>
-              <span className="flex items-center gap-1 text-sm">
+              <span className="flex items-center gap-2 text-sm lg:text-base font-medium">
                 ✅ Beautiful Presets
               </span>
             </div>
