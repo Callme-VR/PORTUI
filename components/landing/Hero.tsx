@@ -30,21 +30,15 @@ export default function ThemeEditor() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <button className="px-6 py-3 rounded-full bg-zinc-900 border border-zinc-700 text-sm lg:px-8 lg:py-4 lg:text-base mb-4 lg:mb-6">
-              {/* Larger and more spaced on desktop */}
-              ✨ Visual Theme Editor
-            </button>
-
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight mt-6 mb-4 lg:mt-8 lg:mb-6 text-center lg:text-left text-white drop-shadow-xl">
               {/* Larger, bolder headline for desktop, improved contrast */}
               {/* Larger font and more margin on desktop, left-aligned */}
               {/* Reduced font size for mobile, added margin below */}
               Design Your <span className="italic text-zinc-400">Perfect</span>
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-fuchsia-500 to-purple-500 lg:text-7xl block mt-2 lg:mt-3">
-                {/* Even larger gradient text for desktop */}
-                {/* Larger gradient text on desktop, more spacing */}
-                shadcn/ui Theme
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-fuchsia-500 to-purple-500 text-5xl sm:text-5xl lg:text-5xl block mt-2 lg:mt-3 font-bold">
+                {/* Smaller gradient text for all screens */}
+                <span className="italic">shadcn/ui</span> Theme
               </span>
             </h1>
 

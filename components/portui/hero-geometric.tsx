@@ -143,23 +143,23 @@ export default function HeroGeometric({
             </div>
 
             <div className="relative z-10 container mx-auto px-4 md:px-6">
-                <div className="max-w-3xl mx-auto text-center">
+                <div className="max-w-3xl mx-auto text-center flex flex-col items-center justify-center">
                     <motion.div
-                        variants={fadeUpVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
-                    >
-                        <Image
-                            src="https://ui.portui.dev/logo.svg"
-                            alt="portui"
-                            width={20}
-                            height={20}
-                        />
-                        <span className="text-sm text-white/60 tracking-wide">
-                            {badge}
-                        </span>
-                    </motion.div>
+    variants={fadeUpVariants}
+    initial="hidden"
+    animate="visible"
+    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12 block md:hidden"
+>
+    <Image
+        src="https://ui.portui.dev/logo.svg"
+        alt="portui"
+        width={20}
+        height={20}
+    />
+    <span className="text-sm text-white/60 tracking-wide">
+        {badge}
+    </span>
+</motion.div>
 
                     <motion.div
                         variants={fadeUpVariants}

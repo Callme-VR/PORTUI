@@ -95,7 +95,7 @@ export const Header = () => {
                 <ThemeToggle />
                 
                 <a
-                  href="https://github.com/Callme-VR"
+                  href="https://github.com/Callme-VR/PORTUI"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors duration-300"
@@ -189,15 +189,15 @@ export const Header = () => {
                   <ThemeToggle />
                 </div>
                 
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Pro</span>
-                  <HeaderPro />
-                </div>
+                <div className="flex items-center">
+  <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Pro</span>
+  <span className="ml-2"><HeaderPro /></span>
+</div>
 
                 {/* Social Links */}
                 <div className="flex items-center gap-4 pt-4">
                   <a
-                    href="https://github.com/Callme-VR"
+                    href="https://github.com/Callme-VR/PORTUI"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors duration-300"
