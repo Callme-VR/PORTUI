@@ -51,7 +51,9 @@ export default function PreviewContent({
 
   const handleTerminalClick = () => {
     const [folder, filename] = link.split("/");
-    const COPY = `bunx shadcn@latest add ${prePath}/r/${filename ? filename : folder}.json`;
+    const COPY = `bunx shadcn@latest add ${prePath}/r/${
+      filename ? filename : folder
+    }.json`;
     navigator.clipboard.writeText(COPY);
     setIsTerminalCopied(true);
     setTimeout(() => {
@@ -109,14 +111,16 @@ export default function PreviewContent({
   return (
     <>
       {isTerminalCopied && (
-        <SuccessParticles buttonRef={terminalButtonRef as RefObject<HTMLButtonElement>} />
+        <SuccessParticles
+          buttonRef={terminalButtonRef as RefObject<HTMLButtonElement>}
+        />
       )}
       {isCopied && (
-        <SuccessParticles buttonRef={copyButtonRef as RefObject<HTMLButtonElement>} />
+        <SuccessParticles
+          buttonRef={copyButtonRef as RefObject<HTMLButtonElement>}
+        />
       )}
-      <div
-        className={cn("relative mt-4", "rounded-xl p-3")}
-      >
+      <div className={cn("relative mt-4", "rounded-xl p-3")}>
         <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <a
             href={`${prePath}/preview/${link}`}
@@ -131,7 +135,12 @@ export default function PreviewContent({
             )}
           >
             Live Preview
-            <ArrowUpRight className={cn("h-4 w-4", "transition-transform duration-200 group-hover:rotate-12")} />
+            <ArrowUpRight
+              className={cn(
+                "h-4 w-4",
+                "transition-transform duration-200 group-hover:rotate-12"
+              )}
+            />
           </a>
           <div className="flex items-center gap-2">
             <OpenInV0Button name={openInV0()} />
@@ -156,13 +165,19 @@ export default function PreviewContent({
               {isTerminalCopied ? (
                 <CheckCheck className="h-3.5 w-3.5 text-white dark:text-black" />
               ) : (
-                <Terminal className={cn("h-3.5 w-3.5", "transition-all duration-200", "group-hover:rotate-12")} />
+                <Terminal
+                  className={cn(
+                    "h-3.5 w-3.5",
+                    "transition-all duration-200",
+                    "group-hover:rotate-12"
+                  )}
+                />
               )}
               <span>npx shadcn add {getFileName()}</span>
             </Button>
             {!isBlock && (
               <form
-                onSubmit={e => {
+                onSubmit={(e) => {
                   e.preventDefault();
                   handleCopyClick();
                 }}
@@ -189,7 +204,13 @@ export default function PreviewContent({
                   {isCopied ? (
                     <CheckCheck className="h-3.5 w-3.5 text-white dark:text-black" />
                   ) : (
-                    <Copy className={cn("h-3.5 w-3.5", "transition-all duration-200", "group-hover:rotate-12")} />
+                    <Copy
+                      className={cn(
+                        "h-3.5 w-3.5",
+                        "transition-all duration-200",
+                        "group-hover:rotate-12"
+                      )}
+                    />
                   )}
                   <span>Copy</span>
                 </Button>
