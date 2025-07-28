@@ -8,6 +8,7 @@
         "---Get Started---",
         "index",
         "---Latest---",
+        "components/glow-menu",
         "components/action-search-bar",
         "components/avatar-picker",
         "components/beams-background",
