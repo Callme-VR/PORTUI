@@ -80,6 +80,18 @@
   body {
     font-family: Arial, Helvetica, sans-serif;
   }
+  .glow {
+    box-shadow: 0 0 6px #3b82f6, 0 0 12px #3b82f6;
+  }
+
+  .hover\:glow:hover {
+    box-shadow: 0 0 4px #3b82f6, 0 0 10px #3b82f6;
+  }
+
+  .glowing-card {
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.6),
+      0 0 24px rgba(59, 130, 246, 0.4), 0 0 36px rgba(59, 130, 246, 0.2);
+  }
 
   pre::-webkit-scrollbar {
     display: none;

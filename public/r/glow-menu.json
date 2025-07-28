@@ -1,0 +1,17 @@
+{
+  "name": "glow-menu",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Home, Flame, Settings, User } from \"lucide-react\";\r\n\r\nconst menuItems = [\r\n  { label: \"Home\", icon: <Home size={20} /> },\r\n  { label: \"Explore\", icon: <Flame size={20} /> },\r\n  { label: \"Profile\", icon: <User size={20} /> },\r\n  { label: \"Settings\", icon: <Settings size={20} /> },\r\n];\r\n\r\nexport default function GlowingMenuCard() {\r\n  const [active, setActive] = useState(\"Home\");\r\n\r\n  return (\r\n    <div className=\"glowing-card p-6 rounded-2xl bg-black/80 border border-blue-500 shadow-xl backdrop-blur-md\">\r\n      <h2 className=\"text-white text-xl font-semibold text-center mb-4\">\r\n        Glowing Menu\r\n      </h2>\r\n\r\n      <nav className=\"flex gap-4 justify-center items-center flex-wrap\">\r\n        {menuItems.map((item) => (\r\n          <button\r\n            key={item.label}\r\n            onClick={() => setActive(item.label)}\r\n            className={`\r\n              flex items-center gap-2 px-4 py-2 rounded-lg\r\n              text-white font-medium\r\n              transition-all duration-300\r\n              border border-zinc-800\r\n              ${active === item.label ? \"glow border-blue-500\" : \"hover:glow\"}\r\n            `}\r\n          >\r\n            {item.icon}\r\n            <span>{item.label}</span>\r\n          </button>\r\n        ))}\r\n      </nav>\r\n    </div>\r\n  );\r\n}\r\n",
+      "path": "/components/portui/glow-menu.tsx",
+      "target": "/components/portui/glow-menu.tsx"
+    }
+  ]
+}
