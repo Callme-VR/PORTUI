@@ -9,6 +9,7 @@
         "index",
         "---Latest---",
         "components/glow-menu",
+        "components/sidebar",
         "components/action-search-bar",
         "components/avatar-picker",
         "components/beams-background",
