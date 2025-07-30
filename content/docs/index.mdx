@@ -11,21 +11,15 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 All components use [Tailwind CSS v4](https://tailwindcss.com/docs/installation/framework-guides/nextjs), so ensure it's installed in your project.
 Many components also use the `cn` utility function—install it with the following command:
 
-
 <Tabs items={["bun", "npx", "pnpm"]}>
   <Tab value="bun">
-    ```bash
-    bunx shadcn@latest add https://portui.vercel.app/r/utils.json
-    ```
+    ```bash bunx shadcn@latest add https://portui.vercel.app/r/utils.json ```
   </Tab>
   <Tab value="npx">
-    ```bash
-    npx shadcn@latest add https://portui.vercel.app/r/utils.json
-    ```
+    ```bash npx shadcn@latest add https://portui.vercel.app/r/utils.json ```
   </Tab>
   <Tab value="pnpm">
-    ```bash
-    pnpm dlx shadcn@latest add https://portui.vercel.app/r/utils.json
+    ```bash pnpm dlx shadcn@latest add https://portui.vercel.app/r/utils.json
     ```
   </Tab>
 </Tabs>
@@ -38,18 +32,13 @@ For example, to add `card-05` to your project, it will be as easy as:
 
 <Tabs items={["bun", "npx", "pnpm"]}>
   <Tab value="bun">
-    ```bash
-    bunx shadcn@latest add https://portui.vercel.app/r/card-05.json
-    ```
+    ```bash bunx shadcn@latest add https://portui.vercel.app/r/card-05.json ```
   </Tab>
   <Tab value="npx">
-    ```bash
-    npx shadcn@latest add https://portui.vercel.app/r/card-05.json
-    ```
+    ```bash npx shadcn@latest add https://portui.vercel.app/r/card-05.json ```
   </Tab>
   <Tab value="pnpm">
-    ```bash
-    pnpm dlx shadcn@latest add https://portui.vercel.app/r/card-05.json
+    ```bash pnpm dlx shadcn@latest add https://portui.vercel.app/r/card-05.json
     ```
   </Tab>
 </Tabs>
@@ -62,7 +51,7 @@ Add to your page and it works!
 import Card05 from "@/components/portui/card-05";
 
 export default function Page() {
-    return <Card05 />;
+  return <Card05 />;
 }
 ```
 
@@ -72,19 +61,16 @@ Blocks are a set of components to make a complete block; they contain multiple f
 
 <Tabs items={["bun", "npx", "pnpm"]}>
   <Tab value="bun">
-    ```bash
-    bunx shadcn@latest add https://portui.vercel.app/r/ai-card-generation.json
-    ```
+    ```bash bunx shadcn@latest add
+    https://portui.vercel.app/r/ai-card-generation.json ```
   </Tab>
   <Tab value="npx">
-    ```bash
-    npx shadcn@latest add https://portui.vercel.app/r/ai-card-generation.json
-    ```
+    ```bash npx shadcn@latest add
+    https://portui.vercel.app/r/ai-card-generation.json ```
   </Tab>
   <Tab value="pnpm">
-    ```bash
-    pnpm dlx shadcn@latest add https://portui.vercel.app/r/ai-card-generation.json
-    ```
+    ```bash pnpm dlx shadcn@latest add
+    https://portui.vercel.app/r/ai-card-generation.json ```
   </Tab>
 </Tabs>
 
@@ -98,7 +84,7 @@ Then, add to your page and it works!
 import AICardGeneration from "@/components/portui/AICardGeneration";
 
 export default function Page() {
-    return <AICardGeneration />;
+  return <AICardGeneration />;
 }
 ```
 
@@ -112,18 +98,15 @@ For monorepos, the `shadcn/ui` CLI contains the `-c` option to specify the path 
 
 <Tabs items={["bun", "npx", "pnpm"]}>
   <Tab value="bun">
-    ```bash
-    bunx shadcn@latest add https://portui.vercel.app/r/card-05.json -c ./apps/www
-    ```
+    ```bash bunx shadcn@latest add https://portui.vercel.app/r/card-05.json -c
+    ./apps/www ```
   </Tab>
   <Tab value="npx">
-    ```bash
-    npx shadcn@latest add https://portui.vercel.app/r/card-05.json -c ./apps/www
-    ```
+    ```bash npx shadcn@latest add https://portui.vercel.app/r/card-05.json -c
+    ./apps/www ```
   </Tab>
   <Tab value="pnpm">
-    ```bash
-    pnpm dlx shadcn@latest add https://portui.vercel.app/r/card-05.json -c ./apps/www
-    ```
+    ```bash pnpm dlx shadcn@latest add https://portui.vercel.app/r/card-05.json
+    -c ./apps/www ```
   </Tab>
 </Tabs>

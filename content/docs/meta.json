@@ -27,6 +27,7 @@
         "components/tweet-card",
         "components/vercel-v0-chat",
         "components/matrix-text",
+        "components/Starbar",
         "---Blocks---",
         "blocks/ai-card-generation",
         "blocks/ai-chat",
