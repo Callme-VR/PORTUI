@@ -8,6 +8,7 @@
         "---Get Started---",
         "index",
         "---Latest---",
+        "components/login",
         "components/glow-menu",
         "components/sidebar",
         "components/action-search-bar",
