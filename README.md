@@ -1,8 +1,8 @@
 <div align="center">
 
-  <!-- Animated Header Banner -->
+  <!-- Header Banner -->
   <a href="https://portui-demo.vercel.app">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=0:101010,50:1a1a1a,100:00d992&height=200&section=header&text=PORTUI&fontSize=70&fontColor=ffffff&fontAlignY=35&desc=Modern%20Developer-First%20UI%20Components%20%26%20Agentic%20Blocks&descSize=20&descAlignY=65&descAlign=50" alt="PORTUI Header Banner" width="100%" />
+    <img src="./public/banner.png" alt="PORTUI Header Banner" width="100%" style="border-radius: 12px;" />
   </a>
 
   <br />
