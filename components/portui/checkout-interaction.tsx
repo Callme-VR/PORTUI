@@ -30,7 +30,7 @@ const defaultProducts: Product[] = [
         name: "Air Max 90",
         price: 129.99,
         category: "Running",
-        image: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/shoes-d2GWFGnVlkkUneRD3x2xDbUVHO1qMp",
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&auto=format&fit=crop&q=80",
         color: "Black/White",
     },
     {
@@ -38,7 +38,7 @@ const defaultProducts: Product[] = [
         name: "Ultra Boost",
         price: 179.99,
         category: "Performance",
-        image: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/shoes-d2GWFGnVlkkUneRD3x2xDbUVHO1qMp",
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&auto=format&fit=crop&q=80",
         color: "Grey/Blue",
     },
     {
@@ -46,7 +46,7 @@ const defaultProducts: Product[] = [
         name: "Classic Trainer",
         price: 89.99,
         category: "Casual",
-        image: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/shoes-d2GWFGnVlkkUneRD3x2xDbUVHO1qMp",
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&auto=format&fit=crop&q=80",
         color: "White/Red",
     },
 ];

@@ -63,7 +63,7 @@ export default function TopNav() {
                 <DropdownMenu>
                     <DropdownMenuTrigger className="focus:outline-none">
                         <Image
-                            src="https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-01-n0x8HFv8EUetf9z6ht0wScJKoTHqf8.png"
+                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
                             alt="User avatar"
                             width={28}
                             height={28}
@@ -75,7 +75,7 @@ export default function TopNav() {
                         sideOffset={8}
                         className="w-[280px] sm:w-80 bg-background border-border rounded-lg shadow-lg"
                     >
-                        <Profile01 avatar="https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-01-n0x8HFv8EUetf9z6ht0wScJKoTHqf8.png" />
+                        <Profile01 avatar="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" />
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>

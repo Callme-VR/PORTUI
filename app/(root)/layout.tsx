@@ -18,7 +18,7 @@ export default function HomeLayout({
   return (
     <>
       <Header />
-      <main className="relative w-full pt-0 md:pt-0 bg-white dark:bg-black">
+      <main className="relative w-full pt-0 md:pt-0 bg-white text-zinc-900 dark:bg-[#101010] dark:text-[#f2f2f2] transition-colors duration-300">
         {children}
       </main>
       <Footer />

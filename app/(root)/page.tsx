@@ -17,26 +17,8 @@ import HeroSection from "@/components/landing/Hero";
 
 export default function Home() {
   return (
-    <main className="bg-white dark:bg-black/5 overflow-x-hidden">
-      <div className="grid grid-row-[auto,1fr-auto] h-screen px-6 lg:px-4 gap-4 sm:gap-12">
-        <HeroSection />
-      </div>
-
-      {/* <AiInput />
-      <AiInputV0Style />
-      <Aiinput03 />
-      <AiInput4 />
-      <AiInput5 />
-      <AiInput6 />
-      <AiInput7 />
-      <AiInput8 />
-      <AiInput9 />
-      <AiInput10 />
-      <AiInput11 /> */}
-      {/* <Alert01 />
-      // <Alert02 /> */}
-      {/* <Alert03 /> */}
-      {/* <Text_01 /> */}
+    <main className="bg-white text-zinc-900 dark:bg-[#101010] dark:text-[#f2f2f2] min-h-screen overflow-x-hidden transition-colors duration-300">
+      <HeroSection />
     </main>
   );
 }

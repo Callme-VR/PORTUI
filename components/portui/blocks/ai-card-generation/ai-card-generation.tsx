@@ -63,7 +63,7 @@ export default function AICardGeneration() {
                     <div className="p-4">
                         <Preview
                             isLoading={isLoading}
-                            imageUrl="https://ferf1mheo22r9ira.public.blob.vercel-storage.com/profile-mjss82WnWBRO86MHHGxvJ2TVZuyrDv.jpeg"
+                            imageUrl="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80"
                         />
 
                         {!isLoading && (

@@ -41,7 +41,7 @@ const defaultProps: Card01Props = {
     author: {
         name: "Dorian Baffier",
         username: "dorian_baffier",
-        avatar: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-04-uuYHWIRvVPi01gEt6NwnGyjqLeeZhz.png",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
         timeAgo: "2h ago",
     },
     content: {

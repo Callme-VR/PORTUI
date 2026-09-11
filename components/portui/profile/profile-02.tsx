@@ -15,7 +15,7 @@ interface Profile02Props {
 const defaultProfile = {
     name: "Alex Thompson",
     role: "Product Designer",
-    avatar: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-02-albo9B0tWOSLXCVZh9rX9KFxXIVWMr.png",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
     location: "San Francisco, CA",
     email: "hello@portui.com",
     website: "https://ui.codesnipet.dev/",

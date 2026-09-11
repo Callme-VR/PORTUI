@@ -15,7 +15,7 @@ export default function AuthBasic() {
             <div className="w-full max-w-[450px]">
                 <div className="w-full h-48 relative mb-4">
                     <Image
-                        src="https://ferf1mheo22r9ira.public.blob.vercel-storage.com/to-the-moon-u5UJD9sRK8WkmaTY8HdEsNKjAQ9bjN.svg"
+                        src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80"
                         alt="To the moon illustration"
                         fill
                         className="object-cover"

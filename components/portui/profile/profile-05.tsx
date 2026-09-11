@@ -45,7 +45,7 @@ const defaultProfile = {
             role: "Lead Designer",
             location: "San Francisco, CA",
             email: "sarah@example.com",
-            avatar: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-01-n0x8HFv8EUetf9z6ht0wScJKoTHqf8.png",
+            avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
             availability: "available",
             skills: ["UI Design", "Design Systems", "User Research"],
             social: {
@@ -59,7 +59,7 @@ const defaultProfile = {
             role: "Senior Designer",
             location: "London, UK",
             email: "mike@example.com",
-            avatar: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-02-albo9B0tWOSLXCVZh9rX9KFxXIVWMr.png",
+            avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
             availability: "busy",
             skills: ["Product Design", "Prototyping", "Animation"],
             social: {

@@ -39,7 +39,7 @@ export default function Card04({
             content: "Just pushed the latest design system updates ✨",
             sender: {
                 name: "Alex Chen",
-                avatar: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-01-n0x8HFv8EUetf9z6ht0wScJKoTHqf8.png",
+                avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
                 isOnline: true,
             },
             timestamp: "10:24 AM",
@@ -55,7 +55,7 @@ export default function Card04({
                 "The new components look amazing! Great work on the animations.",
             sender: {
                 name: "Sarah Kim",
-                avatar: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-02-albo9B0tWOSLXCVZh9rX9KFxXIVWMr.png",
+                avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
                 isOnline: true,
             },
             timestamp: "10:26 AM",
