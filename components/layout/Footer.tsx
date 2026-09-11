@@ -8,19 +8,19 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-zinc-50 text-zinc-700 border-t border-zinc-200 dark:bg-[#101010] dark:text-[#bdbdbd] dark:border-[#3d3a39] pt-16 pb-8 transition-colors">
+    <footer className="relative bg-zinc-50 text-zinc-700 border-t border-zinc-200 dark:bg-[#0c0d12] dark:text-zinc-400 dark:border-[#2d3142] pt-16 pb-8 transition-colors">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 flex flex-col md:flex-row md:items-start md:justify-between gap-12">
         {/* Left Section: Branding */}
         <div className="flex flex-col gap-3 min-w-[220px]">
           <div className="flex items-center gap-2 mb-1">
-            <div className="w-7 h-7 rounded-md bg-zinc-100 border border-zinc-300 dark:bg-[#1a1a1a] dark:border-[#3d3a39] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-zinc-100 border border-zinc-300 dark:bg-[#161822] dark:border-[#2d3142] flex items-center justify-center">
               <Flame className="w-4 h-4 text-emerald-600 dark:text-[#00d992]" />
             </div>
-            <span className="text-2xl font-semibold text-zinc-900 dark:text-white tracking-tight">
+            <span className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">
               PORT<span className="text-emerald-600 dark:text-[#00d992]">UI</span>
             </span>
           </div>
-          <span className="text-xs text-zinc-600 dark:text-[#bdbdbd]">
+          <span className="text-xs text-zinc-600 dark:text-zinc-400">
             Built by{" "}
             <a
               href="https://github.com/Callme-VR"
@@ -31,7 +31,7 @@ export function Footer() {
               @VISHALRAJPUT
             </a>
           </span>
-          <span className="text-xs text-zinc-500 dark:text-[#8b949e] mt-1">
+          <span className="text-xs text-zinc-500 dark:text-zinc-500 mt-1">
             © {currentYear} PORTUI. All rights reserved.
           </span>
         </div>

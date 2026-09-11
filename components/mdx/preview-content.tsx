@@ -51,9 +51,8 @@ export default function PreviewContent({
 
   const handleTerminalClick = () => {
     const [folder, filename] = link.split("/");
-    const COPY = `bunx shadcn@latest add ${prePath}/r/${
-      filename ? filename : folder
-    }.json`;
+    const COPY = `bunx shadcn@latest add ${prePath}/r/${filename ? filename : folder
+      }.json`;
     navigator.clipboard.writeText(COPY);
     setIsTerminalCopied(true);
     setTimeout(() => {
@@ -151,23 +150,20 @@ export default function PreviewContent({
               size="sm"
               className={cn(
                 "relative overflow-hidden",
-                "h-7 px-3 text-xs font-medium",
-                "bg-black dark:bg-white",
-                "text-white dark:text-black",
-                "hover:bg-black/90 dark:hover:bg-white/90",
-                "hover:text-white dark:hover:text-black",
+                "h-8 px-3 text-xs font-medium font-mono",
+                "bg-zinc-900 text-white dark:bg-[#161822] dark:text-[#00d992] dark:border dark:border-[#2d3142]",
+                "hover:bg-zinc-800 dark:hover:bg-[#1f2333]",
                 "transition-all duration-200",
-                "group flex items-center gap-1",
-                "rounded-lg",
-                "shadow-none"
+                "group flex items-center gap-1.5",
+                "rounded-full shadow-sm"
               )}
             >
               {isTerminalCopied ? (
-                <CheckCheck className="h-3.5 w-3.5 text-white dark:text-black" />
+                <CheckCheck className="h-3.5 w-3.5 text-[#00d992]" />
               ) : (
                 <Terminal
                   className={cn(
-                    "h-3.5 w-3.5",
+                    "h-3.5 w-3.5 text-emerald-500 dark:text-[#00d992]",
                     "transition-all duration-200",
                     "group-hover:rotate-12"
                   )}
@@ -190,19 +186,16 @@ export default function PreviewContent({
                   disabled={isPending}
                   className={cn(
                     "relative overflow-hidden",
-                    "h-7 px-3 text-xs font-medium",
-                    "bg-black dark:bg-white",
-                    "text-white dark:text-black",
-                    "hover:bg-black/90 dark:hover:bg-white/90",
-                    "hover:text-white dark:hover:text-black",
+                    "h-8 px-4 text-xs font-semibold",
+                    "bg-[#00d992] text-[#0c0d12]",
+                    "hover:bg-[#2fd6a1]",
                     "transition-all duration-200",
-                    "group flex items-center gap-1",
-                    "rounded-lg",
-                    "shadow-none"
+                    "group flex items-center gap-1.5",
+                    "rounded-full shadow-sm"
                   )}
                 >
                   {isCopied ? (
-                    <CheckCheck className="h-3.5 w-3.5 text-white dark:text-black" />
+                    <CheckCheck className="h-3.5 w-3.5" />
                   ) : (
                     <Copy
                       className={cn(

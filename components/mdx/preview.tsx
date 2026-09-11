@@ -33,7 +33,7 @@ export default function Preview({
         <PreviewContent link={link} prePath={prePath} isBlock={isBlock} />
 
         {useIframe ? (
-          <div className="w-full my-4 border rounded-2xl border-zinc-400 dark:border-zinc-700">
+          <div className="w-full my-4 border rounded-2xl border-zinc-200 dark:border-[#2d3142] bg-white dark:bg-[#12141d]">
             <div className="relative w-full h-[100dvh] overflow-hidden">
               <iframe
                 title={link}
@@ -49,7 +49,7 @@ export default function Preview({
         ) : (
           <div
             className={cn(
-              "p-2 md:p-8 flex justify-center items-center relative border rounded-2xl my-4 border-zinc-400 dark:border-zinc-800 not-prose",
+              "p-2 md:p-8 flex justify-center items-center relative border rounded-2xl my-4 border-zinc-200 dark:border-[#2d3142] bg-zinc-50/50 dark:bg-[#12141d]/50 not-prose",
               compact ? "min-h-[100px]" : "min-h-[400px]",
               isBlock ? "md:p-0" : ""
             )}
@@ -62,7 +62,7 @@ export default function Preview({
             {comment.map((text, index) => (
               <div
                 key={index}
-                className="px-4 py-2 text-sm font-medium bg-purple-100 dark:bg-purple-950/30 rounded-lg text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800/50 shadow-xs hover:bg-purple-200/70 dark:hover:bg-purple-950/50 transition-colors"
+                className="px-3.5 py-1.5 text-xs font-mono font-medium bg-emerald-500/10 dark:bg-[#00d992]/10 text-emerald-700 dark:text-[#00d992] border border-emerald-500/30 dark:border-[#00d992]/30 rounded-full shadow-xs transition-colors"
               >
                 {text}
               </div>

@@ -26,6 +26,7 @@
   --animate-float-slow: float 8s ease-in-out infinite;
 
   @keyframes float {
+
     0%,
     100% {
       transform: translateY(0);
@@ -80,6 +81,7 @@
   body {
     font-family: Arial, Helvetica, sans-serif;
   }
+
   .glow {
     box-shadow: 0 0 6px #3b82f6, 0 0 12px #3b82f6;
   }
@@ -142,23 +144,40 @@ button {
     --radius: 0.5rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary: 160 100% 42.5%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 160 100% 42.5%;
+
+    /* Fumadocs UI Brand Colors (Electric Green #00d992) */
+    --fd-primary: 160 100% 42.5%;
+    --fd-primary-foreground: 0 0% 0%;
   }
 
   .dark {
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 160 100% 42.5%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 160 100% 42.5%;
+
+    /* Fumadocs UI Dark Mode Brand Tokens */
+    --fd-background: 240 15% 6%;
+    --fd-foreground: 0 0% 95%;
+    --fd-card: 240 14% 9%;
+    --fd-card-foreground: 0 0% 95%;
+    --fd-popover: 240 14% 9%;
+    --fd-popover-foreground: 0 0% 95%;
+    --fd-muted: 240 12% 11%;
+    --fd-muted-foreground: 240 5% 65%;
+    --fd-border: 240 12% 18%;
+    --fd-primary: 160 100% 42.5%;
+    --fd-primary-foreground: 0 0% 0%;
   }
 }
 

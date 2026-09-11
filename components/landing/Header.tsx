@@ -15,27 +15,27 @@ export const Header = () => {
 
   return (
     <>
-      {/* Top Announcement Bar */}
-      <div className="w-full py-2.5 px-4 bg-zinc-100 text-zinc-700 border-b border-zinc-200 dark:bg-[#101010] dark:text-[#bdbdbd] dark:border-[#3d3a39] transition-colors">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm font-mono">
+      {/* Top Announcement Bar - Centered */}
+      <div className="w-full py-2.5 px-4 bg-zinc-100 text-zinc-700 border-b border-zinc-200 dark:bg-[#101010] dark:text-zinc-300 dark:border-[#3d3a39] transition-colors">
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-mono text-center flex-wrap">
           <Link
             href="/docs"
-            className="flex items-center gap-2.5 hover:text-zinc-900 dark:hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 hover:text-zinc-900 dark:hover:text-white transition-colors"
           >
-            <span className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 bg-[#00d992] rounded-full animate-pulse" />
-              <span className="text-emerald-600 dark:text-[#00d992] font-semibold uppercase tracking-wider text-[11px] sm:text-xs">
-                [RELEASE v0.1.0]
-              </span>
+            <span className="w-2 h-2 bg-[#00d992] rounded-full animate-pulse shadow-[0_0_8px_#00d992]" />
+            <span className="text-emerald-600 dark:text-[#00d992] font-semibold uppercase tracking-wider text-[11px] sm:text-xs">
+              [RELEASE v0.1.0]
             </span>
-            <span className="hidden sm:inline text-zinc-600 dark:text-[#bdbdbd]">
+            <span className="hidden sm:inline text-zinc-600 dark:text-[#bdbdbd] ml-1">
               Explore modern developer-first UI components
             </span>
           </Link>
 
+          <span className="hidden sm:inline text-zinc-400 dark:text-[#3d3a39] select-none">•</span>
+
           <Link
             href="/docs"
-            className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-md bg-white text-emerald-600 border border-zinc-300 hover:border-emerald-500 dark:bg-[#1a1a1a] dark:text-[#00d992] dark:border-[#3d3a39] dark:hover:border-[#00d992] transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-white text-emerald-600 border border-zinc-300 hover:border-emerald-500 dark:bg-[#1a1a1a] dark:text-[#00d992] dark:border-[#3d3a39] dark:hover:border-[#00d992] transition-all duration-200 shadow-xs hover:scale-105"
           >
             <span>Documentation</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -44,7 +44,7 @@ export const Header = () => {
       </div>
 
       {/* Main Header */}
-      <header className="sticky top-0 left-0 right-0 z-50 w-full bg-white/90 dark:bg-[#101010]/90 backdrop-blur-md border-b border-zinc-200 dark:border-[#3d3a39] transition-colors">
+      <header className="sticky top-0 left-0 right-0 z-50 w-full bg-white/80 dark:bg-[#0c0d12]/80 backdrop-blur-md border-b border-zinc-200 dark:border-[#2d3142] transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -52,10 +52,10 @@ export const Header = () => {
               href="/"
               className="flex items-center gap-2.5 group"
             >
-              <div className="relative flex items-center justify-center w-8 h-8 rounded-md bg-zinc-100 border border-zinc-300 dark:bg-[#1a1a1a] dark:border-[#3d3a39] group-hover:border-[#00d992] transition-colors">
+              <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-zinc-100 border border-zinc-300 dark:bg-[#161822] dark:border-[#2d3142] group-hover:border-[#00d992] transition-colors">
                 <Flame className="h-5 w-5 text-emerald-600 dark:text-[#00d992] transition-colors duration-300" />
               </div>
-              <span className="font-semibold text-lg text-zinc-900 dark:text-white tracking-tight">
+              <span className="font-bold text-lg text-zinc-900 dark:text-white tracking-tight">
                 PORT<span className="text-emerald-600 dark:text-[#00d992]">UI</span>
               </span>
             </Link>
@@ -64,7 +64,7 @@ export const Header = () => {
             <nav className="hidden md:flex items-center gap-8">
               <Link
                 href="/docs/components/background-paths"
-                className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-[#bdbdbd] dark:hover:text-white transition-colors duration-300 relative group"
+                className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-colors duration-300 relative group"
               >
                 Components
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d992] group-hover:w-full transition-all duration-300" />
@@ -72,7 +72,7 @@ export const Header = () => {
 
               <Link
                 href="/docs"
-                className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-[#bdbdbd] dark:hover:text-white transition-colors duration-300 relative group"
+                className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-colors duration-300 relative group"
               >
                 Docs
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d992] group-hover:w-full transition-all duration-300" />
@@ -80,7 +80,7 @@ export const Header = () => {
 
               <Link
                 href="/pricing"
-                className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-[#bdbdbd] dark:hover:text-white transition-colors duration-300 relative group"
+                className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-colors duration-300 relative group"
               >
                 Pricing
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d992] group-hover:w-full transition-all duration-300" />
@@ -97,7 +97,7 @@ export const Header = () => {
                   href="https://github.com/Callme-VR/PORTUI"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 text-zinc-600 hover:text-zinc-900 dark:text-[#bdbdbd] dark:hover:text-white transition-colors duration-300"
+                  className="p-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors duration-300"
                   aria-label="GitHub profile"
                 >
                   <svg
@@ -113,7 +113,7 @@ export const Header = () => {
 
                 <Link
                   href="/docs"
-                  className="px-4 py-2 rounded-md text-sm font-semibold bg-[#00d992] text-[#101010] hover:bg-[#2fd6a1] transition-colors shadow-sm"
+                  className="px-5 py-2 rounded-full text-sm font-semibold bg-[#00d992] text-[#0c0d12] hover:bg-[#2fd6a1] transition-all duration-300 shadow-sm hover:scale-105"
                 >
                   Browse Library
                 </Link>
